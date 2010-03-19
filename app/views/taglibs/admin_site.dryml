@@ -1,0 +1,22 @@
+<!-- Tag definitions for the Admin subsite -->
+  
+<include src="rapid" plugin="hobo"/>
+
+<include src="taglibs/auto/admin/rapid/cards"/>
+<include src="taglibs/auto/admin/rapid/pages"/>
+<include src="taglibs/auto/admin/rapid/forms"/>
+
+<set-theme name="clean"/>
+
+<def tag="app-name">Scicast - Admin</def>
+
+<extend tag="page">
+  <old-page merge>
+    <append-stylesheets:>
+      <stylesheet name="admin"/>
+    </append-stylesheets:>
+    <footer:>
+      <a href="#{base_url}/">View Site</a>
+    </footer:>
+  </old-page>
+</extend>

@@ -1,0 +1,11 @@
+.signup-page h2 { background: #8B000A; color: white; padding: 20px; cursor: pointer;}
+
+.signup-page #or { padding: 20px; font-size: 20px;}
+
+.signup-page #login-form { padding-bottom: 20px; border-bottom: 1px solid #888;}
+
+.signup-page #submit .field-list { width: 450px;}
+
+.show-page.user h3#submit-another { background: #8B000A; color: white; padding: 10px; cursor: pointer; margin: 40px 0 20px;}
+
+.show-page.user form .field-list { width: 450px;}

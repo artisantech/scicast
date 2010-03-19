@@ -1,0 +1,32 @@
+<include src="rapid" plugin="hobo"/>
+
+<include src="taglibs/auto/rapid/cards"/>
+<include src="taglibs/auto/rapid/pages"/>
+<include src="taglibs/auto/rapid/forms"/>
+
+<set-theme name="clean"/>
+
+<include src="paperclip" plugin="paperclip_with_hobo"/>
+
+<def tag="app-name">Scicast</def>
+
+<extend tag="page">
+  <old-page merge without-live-search without-main-nav>
+    <account-nav: without-sign-up>
+    <before-log-out:>
+      <li if="&current_user.administrator?"><a href="/admin/films">Admin</a></li>
+    </before-log-out:>
+    </account-nav:>
+  </old-page>
+</extend>
+
+<def tag="card" for="Film">
+  <card class="film" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+    <body: param>
+      Team: <view:team-name param="team-name"/>
+    </body:>
+  </card>
+</def>
