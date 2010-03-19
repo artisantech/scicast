@@ -34,9 +34,12 @@ class Film < ActiveRecord::Base
                     
   SUBMISSION_FIELDS = %w(title movie description team_name user movie_file_name movie_file_size movie_content_type movie_updated_at)
   
-  has_attached_file :movie
-  has_attached_file :processed_movie
-  has_attached_file :thumbnail
+  
+  with_options :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml" do |o|
+    o.has_attached_file :movie
+    o.has_attached_file :processed_movie
+    o.has_attached_file :thumbnail
+  end
   
   validates_attachment_presence :movie, :message => "must be provided"
   
