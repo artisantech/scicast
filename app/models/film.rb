@@ -35,7 +35,9 @@ class Film < ActiveRecord::Base
   SUBMISSION_FIELDS = %w(title movie description team_name user movie_file_name movie_file_size movie_content_type movie_updated_at)
   
   
-  with_options :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml" do |o|
+  with_options :storage => :s3,
+               :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+               :path => ":attachment/:id/:style.:extension" do |o|
     o.has_attached_file :movie
     o.has_attached_file :processed_movie
     o.has_attached_file :thumbnail
