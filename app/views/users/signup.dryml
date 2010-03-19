@@ -1,37 +1,40 @@
 <signup-page>
   
   <content-header:>
-    <h2 onclick="showLogin()">
-      Submitted a film already? Sign in to see your films or submit another &raquo;
-    </h2>
+    <% unless @user.errors.any? -%>
+      <h2 onclick="showLogin()">
+        Submitted a film already? Sign in to see your films or submit another &raquo;
+      </h2>
 
-    <form action="/users/login" class="login" style="display:none" id="login-form">
-      <labelled-item-list>
-        <labelled-item>
-          <item-label>Email</item-label>
-          <item-value><input type="text" name="login" id="login" class="string" /></item-value>
-        </labelled-item>
+      <form action="/users/login" class="login" style="display:none" id="login-form">
+        <labelled-item-list>
+          <labelled-item>
+            <item-label>Email</item-label>
+            <item-value><input type="text" name="login" id="login" class="string" /></item-value>
+          </labelled-item>
 
-        <labelled-item>
-          <item-label>Password</item-label>
-          <item-value>
-            <input type="password" name="password" id="password" class="string"/>
-          </item-value>
-        </labelled-item>
+          <labelled-item>
+            <item-label>Password</item-label>
+            <item-value>
+              <input type="password" name="password" id="password" class="string"/>
+            </item-value>
+          </labelled-item>
 
-        <labelled-item>
-          <item-label class="field-label">Remember me:</item-label>
-          <item-value>
-            <input type="checkbox" name="remember_me" id="remember-me" checked/>
-          </item-value>
-        </labelled-item>
-      </labelled-item-list>
-      <div>
-        <submit label="Log In"/>
-      </div>
-    </form>
+          <labelled-item>
+            <item-label class="field-label">Remember me:</item-label>
+            <item-value>
+              <input type="checkbox" name="remember_me" id="remember-me" checked/>
+            </item-value>
+          </labelled-item>
+        </labelled-item-list>
+        <div>
+          <submit label="Log In"/>
+        </div>
+      </form>
 
-    <p id="or">or</p>
+      <p id="or">or</p>
+      
+    <% end -%>
 
     <h2 onclick="showSubmit()">
       Submit your film &raquo;
@@ -39,7 +42,7 @@
 
   </content-header:>
   
-  <form: style="display:none" id="submit">
+  <form: style="#{'display:none' unless @user.errors.any?}" id="submit">
     <field-list:>
       <name-label:>Your name</name-label:>
       <film-title-label:>Title of your film</film-title-label:>

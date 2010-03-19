@@ -23,9 +23,7 @@ class User < ActiveRecord::Base
   attr_accessor :film_description, :type => :text
   attr_accessor :file
   
-  validates_presence_of :film_title
-  validates_presence_of :film_description
-  validates_presence_of :file  
+  validates_presence_of :film_title, :film_description, :file, :team_name
   
   has_many :films
   
