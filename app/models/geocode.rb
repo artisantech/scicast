@@ -22,5 +22,7 @@ Geocode = classy_module do
      end
    end
   end
+  
+  attr_protected :lat, :lng
 
 end
