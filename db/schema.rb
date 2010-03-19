@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100319110353) do
+ActiveRecord::Schema.define(:version => 20100319163615) do
 
   create_table "films", :force => true do |t|
     t.string   "title"
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(:version => 20100319110353) do
     t.string   "aspect"
     t.boolean  "published"
     t.integer  "user_id"
+    t.text     "team_info"
+    t.string   "license"
+    t.date     "production_date"
   end
 
   add_index "films", ["user_id"], :name => "index_films_on_user_id"
@@ -51,7 +54,6 @@ ActiveRecord::Schema.define(:version => 20100319110353) do
     t.datetime "remember_token_expires_at"
     t.string   "name"
     t.string   "email"
-    t.string   "location"
     t.string   "institution"
     t.text     "feedback"
     t.boolean  "administrator",                           :default => false
@@ -59,6 +61,11 @@ ActiveRecord::Schema.define(:version => 20100319110353) do
     t.datetime "updated_at"
     t.string   "state",                                   :default => "active"
     t.datetime "key_timestamp"
+    t.string   "postcode"
+    t.string   "how_did_you_hear_about_us"
+    t.string   "first_time"
+    t.float    "lat"
+    t.float    "lng"
   end
 
   add_index "users", ["state"], :name => "index_users_on_state"

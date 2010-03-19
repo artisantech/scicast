@@ -3,12 +3,14 @@ class User < ActiveRecord::Base
   hobo_user_model # Don't put anything above this
 
   fields do
-    name          :string, :required, :unique
-    email         :email_address, :login => true
+    name  :string, :required, :unique
+    email :email_address, :login => true
     
-    location    :string
+    postcode    :string
     institution :string
-    
+
+    how_did_you_hear_about_us :string
+    first_time enum_string(:yes, :no)
     feedback :text
     
     administrator :boolean, :default => false
@@ -20,10 +22,13 @@ class User < ActiveRecord::Base
   before_create { |user| user.administrator = true if !Rails.env.test? && count == 0 }
   
   attr_accessor :film_title, :team_name, :type => :string
-  attr_accessor :film_description, :type => :text
+  attr_accessor :film_description, :team_info, :type => :text
+  attr_accessor :production_date, :type => :date
   attr_accessor :file
+  attr_accessor :license, :type => HoboFields::EnumString.for(:cc_by, :cc_by_nc_sa)
   
-  validates_presence_of :film_title, :film_description, :file, :team_name
+  validates_presence_of :film_title, :film_description, :file,
+                        :team_name, :team_info, :production_date, :license, :on => :create
   
   has_many :films
   
@@ -38,7 +43,9 @@ class User < ActiveRecord::Base
     state :active, :default => true
 
     create :signup, :available_to => "Guest",
-           :params => [:name, :film_title, :file, :film_description, :team_name, :email, :password, :password_confirmation],
+           :params => [:name, :film_title, :file, :film_description, :production_date,
+                       :team_name, :team_info, :license,
+                       :email, :password, :password_confirmation],
            :become => :active
              
     transition :request_password_reset, { :active => :active }, :new_key => true do
@@ -51,7 +58,10 @@ class User < ActiveRecord::Base
   end
   
   def create_film
-    films.create! :title => film_title, :description => film_description, :movie => file, :team_name => team_name
+    films.create! :title => film_title, :description => film_description, :movie => file,
+                  :team_name => team_name, :team_info => team_info,
+                  :production_date => production_date,
+                  :license => license
   end
   
 

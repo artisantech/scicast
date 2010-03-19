@@ -7,7 +7,7 @@
     
     <h3 id="submit-another" onclick="Effect.SlideDown('submit-form', { duration: 0.5 })">Submit another film &raquo;</h3>
     <form with="&@film || @user.films.new" owner="user" style="#{'display:none' unless @film}" id='submit-form' multipart>
-      <field-list: fields="title, description, team_name, movie">
+      <field-list: fields="title, description, production_date, team_name, team_info, license, movie">
         <film-title-label:>Title of your film</film-title-label:>
         <movie-label:>Upload your film</movie-label:>
       </field-list:>

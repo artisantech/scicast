@@ -7,18 +7,24 @@ class Film < ActiveRecord::Base
   fields do
     title :string, :required
     description :text, :required
+    
     team_name :string, :required
+    team_info :text, :required
 
     editorial_notes :text
     unique_id :string
     
     duration :integer # In seconds
     
-    music_status Status
-    video_status Status
-    stills_status Status
-    safety_status Status
+    license enum_string(:cc_by, :cc_by_nc_sa), :required
+    
+    music_status   Status
+    video_status   Status
+    stills_status  Status
+    safety_status  Status
     science_status Status
+    
+    production_date :date, :required
     
     aspect enum_string('4:3', '16:9')
     
@@ -32,7 +38,10 @@ class Film < ActiveRecord::Base
                     aspect published
                     processed_movie tumbnail)
                     
-  SUBMISSION_FIELDS = %w(title movie description team_name user movie_file_name movie_file_size movie_content_type movie_updated_at)
+  SUBMISSION_FIELDS = %w(user
+                         title movie description production_date license
+                         team_name team_info
+                         movie_file_name movie_file_size movie_content_type movie_updated_at)
   
   
   with_options :storage => :s3,
