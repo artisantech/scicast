@@ -56,6 +56,8 @@ class Film < ActiveRecord::Base
   
   belongs_to :user, :creator => true
   
+  attr_protected *attachment_fields(:movie, :processed_movie, :thumbnail)
+  
   # --- Permissions --- #
 
   def create_permitted?

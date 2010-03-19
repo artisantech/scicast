@@ -15,6 +15,13 @@ module ::Paperclip
       declare_attr_type name, ::Paperclip::Attachment
     end
     alias_method_chain :has_attached_file, :hobo
+    
+    def attachment_fields(*names)
+      names.map { |name| ["#{name}_file_name", 
+                          "#{name}_content_type",
+                          "#{name}_file_size",
+                          "#{name}_updated_at"] }.flatten
+    end
   
   end
   
