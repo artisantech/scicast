@@ -32,7 +32,7 @@ class Film < ActiveRecord::Base
                     aspect published
                     processed_movie tumbnail)
                     
-  SUBMISSION_FIELDS = %w(title movie description team_name user movie)
+  SUBMISSION_FIELDS = %w(title movie description team_name user movie_file_name movie_file_size movie_content_type movie_updated_at)
   
   has_attached_file :movie
   has_attached_file :processed_movie

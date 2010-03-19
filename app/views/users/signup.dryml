@@ -42,7 +42,7 @@
 
   </content-header:>
   
-  <form: style="#{'display:none' unless @user.errors.any?}" id="submit">
+  <form: style="#{'display:none' unless @user.errors.any?}" id="submit" multipart>
     <field-list:>
       <name-label:>Your name</name-label:>
       <film-title-label:>Title of your film</film-title-label:>

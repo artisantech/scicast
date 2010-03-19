@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
   end
   
   def create_film
-    films.create :title => film_title, :description => film_description, :movie => file, :team_name => team_name
+    films.create! :title => film_title, :description => film_description, :movie => file, :team_name => team_name
   end
   
 
