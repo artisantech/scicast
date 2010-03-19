@@ -1,0 +1,9 @@
+.DS_Store
+/log
+/tmp
+/db/*.sqlite3
+/tmtags
+/app/views/taglibs/auto
+/config/database.yml
+/public/cache
+/public/system
