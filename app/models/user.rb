@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
   
   after_create :create_film
   
+  include Geocode
+  
   # --- Signup lifecycle --- #
 
   lifecycle do
