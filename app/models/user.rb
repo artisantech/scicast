@@ -1,4 +1,13 @@
 class User < ActiveRecord::Base
+  
+  WhereFrom = HoboFields::EnumString.for(:planet_science,
+                                         :institute_of_physics,
+                                         :local_authority,
+                                         :gratnells,
+                                         :exhibition,
+                                         :recommendation,
+                                         :other,
+                                         :dont_know)
 
   hobo_user_model # Don't put anything above this
 
@@ -9,7 +18,8 @@ class User < ActiveRecord::Base
     postcode    :string
     institution :string
 
-    how_did_you_hear_about_us :string
+    how_did_you_hear_about_us WhereFrom
+    
     first_time enum_string(:yes, :no)
     feedback :text
     
@@ -27,9 +37,11 @@ class User < ActiveRecord::Base
   attr_accessor :file
   attr_accessor :license, :type => HoboFields::EnumString.for(:cc_by, :cc_by_nc_sa)
   
-  validates_presence_of :film_title, :film_description, :file,
-                        :team_name, :team_info, :production_date, :license, :on => :create
+  attr_accessor :post_film, :type => :boolean
   
+  validates_presence_of :film_title, :film_description,
+                        :team_name, :team_info, :production_date, :license, :on => :create
+                        
   has_many :films
   
   after_create :create_film
@@ -40,14 +52,25 @@ class User < ActiveRecord::Base
 
   lifecycle do
 
-    state :active, :default => true
+    state :inactive, :default => true
+    state :active
 
     create :signup, :available_to => "Guest",
-           :params => [:name, :film_title, :file, :film_description, :production_date,
-                       :team_name, :team_info, :license,
-                       :email, :password, :password_confirmation],
-           :become => :active
-             
+           :params => [:name, :email, 
+                       :film_title, :film_description, :production_date, :license,
+                       :team_name, :team_info,
+                       :how_did_you_hear_about_us, :first_time, :feedback,
+                       :password, :password_confirmation],
+           :new_key => true,
+           :become => :inactive do
+      UserMailer.deliver_activation(self, lifecycle.key) 
+    end
+    
+    transition :activate, { :inactive => :active }, :available_to => :key_holder,
+               :params => [ :post_film ] do
+      films.first.update_attribute :submit_by_post, post_film
+    end
+         
     transition :request_password_reset, { :active => :active }, :new_key => true do
       UserMailer.deliver_forgot_password(self, lifecycle.key)
     end
@@ -56,7 +79,7 @@ class User < ActiveRecord::Base
                :params => [ :password, :password_confirmation ]
 
   end
-  
+
   def create_film
     films.create! :title => film_title, :description => film_description, :movie => file,
                   :team_name => team_name, :team_info => team_info,
@@ -73,7 +96,8 @@ class User < ActiveRecord::Base
 
   def update_permitted?
     acting_user.administrator? || 
-      (acting_user == self && only_changed?(:email, :crypted_password,
+      (acting_user == self && only_changed?(:email, :post_film,
+                                            :crypted_password,
                                             :current_password, :password, :password_confirmation))
     # Note: crypted_password has attr_protected so although it is permitted to change, it cannot be changed
     # directly from a form submission.
@@ -84,7 +108,10 @@ class User < ActiveRecord::Base
   end
 
   def view_permitted?(field)
-    new_record? || acting_user.administrator? || acting_user == self
+    new_record? or
+     acting_user.administrator? or
+     acting_user == self or
+     lifecycle.valid_key? && field.in?([:post_film])
   end
 
 end

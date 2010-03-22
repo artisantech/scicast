@@ -23,10 +23,26 @@
 <def tag="card" for="Film">
   <card class="film" param="default" merge>
     <header: param>
-      <h4 param="heading"><name/></h4>
+      <h4 param="heading"><a/></h4>
     </header:>
     <body: param>
       Team: <view:team-name param="team-name"/>
+      <div class='no-movie' unless="&this.movie.file?">
+        We do not have the movie file for this film.<br/>
+        Please <a>Upload it</a> or <a>Let us know</a> that you will post it
+      </div>
     </body:>
   </card>
 </def>
+
+<def tag="input" for="User::WhereFrom">
+  <input for-type="HoboFields::EnumString" merge labels="&{:institute_of_physics => 'Via the Institue of Physics',
+                                                           :local_authority => 'Via my local authority science advisor',
+                                                           :gratnells => 'Via Gratnells\' marketing',
+                                                           :exhibition => 'Saw SciCast at The Big Bang Fair or another exhibition',
+                                                           :recommendation => 'Recommendation from a friend or colleague',
+                                                           :other => 'Other (please specify)',
+                                                           :dont_know => 'I\'ve no idea, sorry'
+                                                          }"/>
+</def>
+

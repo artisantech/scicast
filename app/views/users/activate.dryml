@@ -1,0 +1,25 @@
+<activate-page>
+  <append-scripts:>
+    <%= swfupload_head %>
+  </append-scripts:>
+
+  <content-header:>
+    <h2>Complete your submission</h2>
+    
+    <p>To complete the submission of your film, please upload the movie file.</p>
+  </content-header:>
+  
+
+  <before-form:>
+    <%= swfupload :controller => 'films', :action => 'upload', :id => @user.films.first.id %>
+  </before-form:>
+  
+  <form: without-cancel multipart>
+    <field-list: replace>
+      <h3>If you have problems uploading your film, you can post it to us on a CD instead</h3>
+      <input:post_film/> I will submit my film by post
+    </field-list:>
+    <submit: label="Complete Submission"/>
+  </form:>
+
+</activate-page>

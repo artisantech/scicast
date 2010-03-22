@@ -1,0 +1,9 @@
+<%= @user %>,
+
+In order to activate your <%= @app_name %> account, please click on this link:
+
+  <%= user_activate_url :host => @host, :id => @user, :key => @key %>
+
+Thank you,
+
+The <%= @app_name %> team.

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100319163615) do
+ActiveRecord::Schema.define(:version => 20100322170503) do
 
   create_table "films", :force => true do |t|
     t.string   "title"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20100319163615) do
     t.text     "team_info"
     t.string   "license"
     t.date     "production_date"
+    t.boolean  "submit_by_post"
   end
 
   add_index "films", ["user_id"], :name => "index_films_on_user_id"
@@ -59,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20100319163615) do
     t.boolean  "administrator",                           :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "state",                                   :default => "active"
+    t.string   "state",                                   :default => "inactive"
     t.datetime "key_timestamp"
     t.string   "postcode"
     t.string   "how_did_you_hear_about_us"

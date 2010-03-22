@@ -1,5 +1,8 @@
 .signup-page h2 { background: #8B000A; color: white; padding: 15px; cursor: pointer;}
 
+.signup-page th { text-align: right;}
+
+
 .signup-page #or { padding: 20px; font-size: 20px;}
 
 .signup-page #login-form { padding-bottom: 20px; border-bottom: 1px solid #888;}
@@ -9,3 +12,8 @@
 .show-page.user h3#submit-another { background: #8B000A; color: white; padding: 10px; cursor: pointer; margin: 40px 0 20px;}
 
 .show-page.user form .field-list { width: 450px;}
+
+.card.film { position: relative; }
+.no-movie { position: absolute; top: 5px; right: 5px; text-align: right; color: red;}
+
+a#done { display:block; margin-top: 30px; }

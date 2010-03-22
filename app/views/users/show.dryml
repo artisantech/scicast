@@ -11,7 +11,7 @@
         <film-title-label:>Title of your film</film-title-label:>
         <movie-label:>Upload your film</movie-label:>
       </field-list:>
-      <submit: label="Submit Film"/>
+      <submit: label="Next &raquo;"/>
     </form>
     
   </content-body:>

@@ -15,7 +15,7 @@ Geocode = classy_module do
    self.lat = self.lng = nil # the location is reset even if the geocoding fails
 
    unless postcode.blank?
-     geo = GeoKit::Geocoders::MultiGeocoder.geocode(postcode)
+     geo = GeoKit::Geocoders::MultiGeocoder.geocode("#{postcode.strip}, UK")
      if geo.success
        self.lat = geo.lat
        self.lng = geo.lng

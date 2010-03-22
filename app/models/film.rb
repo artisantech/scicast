@@ -30,6 +30,8 @@ class Film < ActiveRecord::Base
     
     published :boolean
     
+    submit_by_post :boolean
+    
     timestamps
   end
   
@@ -39,7 +41,7 @@ class Film < ActiveRecord::Base
                     processed_movie tumbnail)
                     
   SUBMISSION_FIELDS = %w(user
-                         title movie description production_date license
+                         title description production_date license
                          team_name team_info
                          movie_file_name movie_file_size movie_content_type movie_updated_at)
   
@@ -52,21 +54,26 @@ class Film < ActiveRecord::Base
     o.has_attached_file :thumbnail
   end
   
-  validates_attachment_presence :movie, :message => "must be provided"
+  validates_attachment_presence :movie, :message => "must be provided", :unless => :new_record?
   
   belongs_to :user, :creator => true
   
   attr_protected *attachment_fields(:movie, :processed_movie, :thumbnail)
   
+  def activating?
+    lifecycle.active_step.name == :activate
+  end
+  
   # --- Permissions --- #
 
   def create_permitted?
     only_changed?(*SUBMISSION_FIELDS) and
-    acting_user.guest? || acting_user == user
+      acting_user.guest? || acting_user == user
   end
 
   def update_permitted?
-    acting_user.administrator?
+    acting_user.administrator? or
+      only_changed? :submit_by_post
   end
 
   def destroy_permitted?
@@ -76,5 +83,11 @@ class Film < ActiveRecord::Base
   def view_permitted?(field)
     true
   end
+  
+  def upload_permitted?
+    acting_user == user or
+      true
+  end
+
 
 end
