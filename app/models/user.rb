@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
     name  :string, :required, :unique
     email :email_address, :login => true
     
-    postcode    :string
-    institution :string
+    postcode    :string, :required
+    institution :string, :required
 
     how_did_you_hear_about_us WhereFrom
     
@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
     state :active
 
     create :signup, :available_to => "Guest",
-           :params => [:name, :email, :postcode,
+           :params => [:name, :email, :postcode, :institution,
                        :first_time, :how_did_you_hear_about_us, :feedback,
                        :password, :password_confirmation],
            :new_key => true,
