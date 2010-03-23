@@ -1,0 +1,25 @@
+<page title="Account">
+
+  <body: class="user-account-page #{type_name}"/>
+
+  <content:>
+    <header class="content-header">
+      <h2><name/> - Edit Account</h2>
+    </header>
+
+    <section class="content-body">
+      <error-messages />
+      <form class="change-password" >
+        <field-list fields="email, current_password, password, password_confirmation" >
+          <password-label:>New Password</password-label:>
+          <password-confirmation-label:>Confirm New Password</password-confirmation-label:>
+        </field-list>
+
+        <div class="actions">
+          <submit label="Save"/><or-cancel/>
+        </div>
+      </form>
+    </section>
+  </content:>
+  
+</page>
