@@ -1,0 +1,58 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<def tag="form" for="Film">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="title, description, team_name, team_info, editorial_notes, duration, license, music_status, video_status, stills_status, safety_status, science_status, production_date, aspect, published, submit_by_post, movie_file_name, movie_content_type, movie_file_size, movie_updated_at, processed_movie_file_name, processed_movie_content_type, processed_movie_file_size, processed_movie_updated_at, thumbnail_file_name, thumbnail_content_type, thumbnail_file_size, thumbnail_updated_at, user" param/>
+    <div param="actions">
+      <submit label="#{ht 'films.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="User">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email, postcode, institution, how_did_you_hear_about_us, first_time, feedback, administrator, lat, lng, state" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="signup-form" polymorphic/>
+<def tag="signup-form" for="User">
+  <form lifecycle="signup" merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email, postcode, first_time, how_did_you_hear_about_us, feedback, password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.signup', :default=>['Signup']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="activate-form" polymorphic/>
+<def tag="activate-form" for="User">
+  <form lifecycle="activate" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="post_film, film_title, film_description, production_date, license, team_name, team_info" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.activate', :default=>['Activate']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+<def tag="reset-password-form" polymorphic/>
+<def tag="reset-password-form" for="User">
+  <form lifecycle="reset_password" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{ht 'users.actions.reset_password', :default=>['Reset Password']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+

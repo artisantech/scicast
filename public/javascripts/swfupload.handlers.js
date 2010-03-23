@@ -76,11 +76,9 @@ function fileDialogComplete(numFilesSelected, numFilesQueued) {
 
 function uploadStart(file) {
 	try {
-		/* I don't want to do any file validation or anything,  I'll just update the UI and
-		return true to indicate that the upload should start.
-		It's important to update the UI here because in Linux no uploadProgress events are called. The best
-		we can do is say we are uploading.
-		 */
+	  $$('input[type=submit]').map(function(e) { e.disabled = true })  
+	  $('btnCancel').show()
+	  swfu.setButtonDisabled(true)
 
 		var progress = new FileProgress(file, this.customSettings.progressTarget);
 		progress.setStatus("Uploading...");
@@ -168,6 +166,11 @@ function uploadError(file, errorCode, message) {
 }
 
 function uploadComplete(file) {
+  $$('input[type=submit]').map(function(e) { e.disabled = false })  
+  $('btnUpload').show()
+  $('btnCancel').hide()
+  swfu.setButtonDisabled(false)
+  
 	if (this.getStats().files_queued === 0) {
 		document.getElementById(this.customSettings.cancelButtonId).disabled = true;
 		

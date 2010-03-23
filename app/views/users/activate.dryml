@@ -1,4 +1,6 @@
-<activate-page>
+<% film = @user.films.first -%>
+
+<activate-page without-account-nav>
   <append-scripts:>
     <%= swfupload_head %>
   </append-scripts:>
@@ -6,20 +8,22 @@
   <content-header:>
     <h2>Complete your submission</h2>
     
-    <p>To complete the submission of your film, please upload the movie file.</p>
+    <if test="&film.movie.file?">
+      <p>Your film "<%= h film.movie_file_name %>" has been uploaded.</p>
+      <p>We still need some details about your film.</p>
+    </if>
+    <else>
+      <p>To complete the submission of your film, please upload the movie file and tell us some details about the film.</p>
+      <p>If you have problems with the upload, you may submit your film by post. Please tick the box below.</p>
+      <%= swfupload :controller => 'films', :action => 'upload', :id => film.id %>
+    </else>
   </content-header:>
-  
 
-  <before-form:>
-    <%= swfupload :controller => 'films', :action => 'upload', :id => @user.films.first.id %>
-  </before-form:>
-  
   <form: without-cancel multipart>
-    <field-list: replace>
-      <h3>If you have problems uploading your film, you can post it to us on a CD instead</h3>
-      <input:post_film/> I will submit my film by post
+    <field-list:>
+      <post-film-label:>I will submit my film by posting a CD</post-film-label:>
     </field-list:>
-    <submit: label="Complete Submission"/>
+    <submit: label="Complete Submission" class="disable-during-upload"/>
   </form:>
 
 </activate-page>

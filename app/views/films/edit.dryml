@@ -1,0 +1,22 @@
+<edit-page>
+  <append-scripts:>
+    <%= swfupload_head %>
+  </append-scripts:>
+
+  <heading:>Film Details</heading:>
+  
+  <append-content-header:>
+    <if test="&@film.movie.file?">
+      <p>Your movie file "<%= h @film.movie_file_name %>" has been uploaded. You can upload a replacement file if you wish to</p>
+    </if>
+    <else>
+      <p>To complete the submission of your film, please upload the movie file and tell us some details about the film.</p>
+      <p>If you have problems with the upload, you may submit your film by post. Please tick the box below.</p>
+    </else>
+    <%= swfupload :controller => 'films', :action => 'upload', :id => @film.id %>
+  </append-content-header:>
+    
+  <form:>
+    <field-list: fields="title, description, production_date, team_name, team_info, license"/>
+  </form:>
+</edit-page>

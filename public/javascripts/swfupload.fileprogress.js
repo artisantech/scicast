@@ -102,20 +102,20 @@ FileProgress.prototype.setError = function () {
 	this.fileProgressElement.childNodes[3].className = "progressBarError";
 	this.fileProgressElement.childNodes[3].style.width = "";
 
-	var oSelf = this;
-	this.setTimer(setTimeout(function () {
-		oSelf.disappear();
-	}, 5000));
+	//var oSelf = this;
+	//this.setTimer(setTimeout(function () {
+	//	oSelf.disappear();
+	//}, 5000));
 };
 FileProgress.prototype.setCancelled = function () {
 	this.fileProgressElement.className = "progressContainer";
 	this.fileProgressElement.childNodes[3].className = "progressBarError";
 	this.fileProgressElement.childNodes[3].style.width = "";
 
-	var oSelf = this;
-	this.setTimer(setTimeout(function () {
-		oSelf.disappear();
-	}, 2000));
+	//var oSelf = this;
+	//this.setTimer(setTimeout(function () {
+	//	oSelf.disappear();
+	//}, 2000));
 };
 FileProgress.prototype.setStatus = function (status) {
 	this.fileProgressElement.childNodes[2].innerHTML = status;

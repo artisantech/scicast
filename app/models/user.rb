@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   attr_accessor :post_film, :type => :boolean
   
   validates_presence_of :film_title, :film_description,
-                        :team_name, :team_info, :production_date, :license, :on => :create
+                        :team_name, :team_info, :production_date, :license, :on => :update
                         
   has_many :films
   
@@ -56,10 +56,8 @@ class User < ActiveRecord::Base
     state :active
 
     create :signup, :available_to => "Guest",
-           :params => [:name, :email, 
-                       :film_title, :film_description, :production_date, :license,
-                       :team_name, :team_info,
-                       :how_did_you_hear_about_us, :first_time, :feedback,
+           :params => [:name, :email, :postcode,
+                       :first_time, :how_did_you_hear_about_us, :feedback,
                        :password, :password_confirmation],
            :new_key => true,
            :become => :inactive do
@@ -67,8 +65,13 @@ class User < ActiveRecord::Base
     end
     
     transition :activate, { :inactive => :active }, :available_to => :key_holder,
-               :params => [ :post_film ] do
-      films.first.update_attribute :submit_by_post, post_film
+               :params => [ :post_film, :film_title, :film_description, :production_date, :license, :team_name, :team_info] do
+      film = films.first
+      film.update_attributes :title => film_title, :description => film_description, :movie => file,
+                             :team_name => team_name, :team_info => team_info,
+                             :production_date => production_date,
+                             :license => license, :submit_by_post => post_film
+      film.save!                           
     end
          
     transition :request_password_reset, { :active => :active }, :new_key => true do
@@ -81,10 +84,7 @@ class User < ActiveRecord::Base
   end
 
   def create_film
-    films.create! :title => film_title, :description => film_description, :movie => file,
-                  :team_name => team_name, :team_info => team_info,
-                  :production_date => production_date,
-                  :license => license
+    films.create!
   end
   
 
@@ -95,10 +95,10 @@ class User < ActiveRecord::Base
   end
 
   def update_permitted?
-    acting_user.administrator? || 
-      (acting_user == self && only_changed?(:email, :post_film,
-                                            :crypted_password,
-                                            :current_password, :password, :password_confirmation))
+    acting_user.administrator? or
+      (acting_user == self || lifecycle.valid_key?) && 
+      only_changed?(:email, :post_film, :film_title, :film_description, :production_date, :license, :team_name, :team_info,
+                    :crypted_password, :current_password, :password, :password_confirmation)
     # Note: crypted_password has attr_protected so although it is permitted to change, it cannot be changed
     # directly from a form submission.
   end
@@ -111,7 +111,10 @@ class User < ActiveRecord::Base
     new_record? or
      acting_user.administrator? or
      acting_user == self or
-     lifecycle.valid_key? && field.in?([:post_film])
+     lifecycle.valid_key? && (
+       field.in?([:film_title, :film_description, :production_date, :license, :team_name, :team_info]) or
+       !(films.first && films.first.movie.file?) && field == :post_film
+     )
   end
 
 end

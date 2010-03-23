@@ -1,6 +1,6 @@
 .signup-page h2 { background: #8B000A; color: white; padding: 15px; cursor: pointer;}
 
-.signup-page th { text-align: right;}
+form th { text-align: right;}
 
 
 .signup-page #or { padding: 20px; font-size: 20px;}
@@ -16,4 +16,6 @@
 .card.film { position: relative; }
 .no-movie { position: absolute; top: 5px; right: 5px; text-align: right; color: red;}
 
-a#done { display:block; margin-top: 30px; }
+.film.show-page form { margin-bottom: 30px;}
+
+form.upload { margin: 20px 0;}

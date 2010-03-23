@@ -1,32 +1,9 @@
-<show-page:>
-  <append-scripts:>
-    <%= swfupload_head %>
-  </append-scripts:>
-
-  <content:>
-    <% if this.movie.file? %>
-      ...
-    <% else %>
-    <section class="content-header">
-      <h2>Film: <name/></h2>
-      <p>We do not have the movie file for this film.</p>
-    </section>
-    <section class="content-body">
-       <h3>Please upload it:</h3>
-      
-      <%= swfupload :controller => 'films', :action => 'upload', :id => @this.id %>
-      
-      <h3>Or</h3>
-      <p>If you have problems uploading your film, you can post it to us on a CD instead</p>
-      
-      <form>
-        <input:submit_by_post/> I will submit my film by post
-        <submit label="Save"/>
-      </form>
-      
-      <a:user id="done">Done</a>
-    </section>
-    <% end -%>
-  </content:>
+<show-page without-creator-link>
   
-</show-page:>
+  <field-list: fields="team_name, team_info, license, production_date"/>
+  
+  <parent-link:>&laquo; Back to my films.</parent-link:>
+  
+  <edit-link:>Edit Details</edit-link:>
+  
+</show-page>

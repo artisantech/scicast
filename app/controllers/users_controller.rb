@@ -23,8 +23,10 @@ class UsersController < ApplicationController
   def do_activate
     do_transition_action :activate do
       if valid?
-        flash[:notice] = "Your film has been submitted!"
+        flash[:notice] = ("Your film has been submitted!" if @this.films.first.movie.file?)
         self.current_user = @this 
+      else
+        this.update_attribute :state, 'inactive' # workaround for hobo lifecycle bug
       end
     end
   end

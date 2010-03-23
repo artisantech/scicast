@@ -41,7 +41,7 @@
                                                            :gratnells => 'Via Gratnells\' marketing',
                                                            :exhibition => 'Saw SciCast at The Big Bang Fair or another exhibition',
                                                            :recommendation => 'Recommendation from a friend or colleague',
-                                                           :other => 'Other (please specify)',
+                                                           :other => 'Other (please give details below in feedback)',
                                                            :dont_know => 'I\'ve no idea, sorry'
                                                           }"/>
 </def>

@@ -5,18 +5,18 @@ class Film < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    title :string, :required
-    description :text, :required
+    title :string
+    description :text
     
-    team_name :string, :required
-    team_info :text, :required
+    team_name :string
+    team_info :text
 
     editorial_notes :text
     unique_id :string
     
     duration :integer # In seconds
     
-    license enum_string(:cc_by, :cc_by_nc_sa), :required
+    license enum_string(:cc_by, :cc_by_nc_sa)
     
     music_status   Status
     video_status   Status
@@ -24,7 +24,7 @@ class Film < ActiveRecord::Base
     safety_status  Status
     science_status Status
     
-    production_date :date, :required
+    production_date :date
     
     aspect enum_string('4:3', '16:9')
     
@@ -40,10 +40,10 @@ class Film < ActiveRecord::Base
                     aspect published
                     processed_movie tumbnail)
                     
-  SUBMISSION_FIELDS = %w(user
-                         title description production_date license
-                         team_name team_info
-                         movie_file_name movie_file_size movie_content_type movie_updated_at)
+  USER_FIELDS = %w(title description production_date license
+                   team_name team_info
+                   movie_file_name movie_file_size movie_content_type movie_updated_at
+                   license submit_by_post)
   
   
   with_options :storage => :s3,
@@ -53,8 +53,6 @@ class Film < ActiveRecord::Base
     o.has_attached_file :processed_movie
     o.has_attached_file :thumbnail
   end
-  
-  validates_attachment_presence :movie, :message => "must be provided", :unless => :new_record?
   
   belongs_to :user, :creator => true
   
@@ -67,13 +65,12 @@ class Film < ActiveRecord::Base
   # --- Permissions --- #
 
   def create_permitted?
-    only_changed?(*SUBMISSION_FIELDS) and
-      acting_user.guest? || acting_user == user
+    acting_user.guest? || acting_user == user
   end
 
   def update_permitted?
     acting_user.administrator? or
-      only_changed? :submit_by_post
+      only_changed? *USER_FIELDS
   end
 
   def destroy_permitted?

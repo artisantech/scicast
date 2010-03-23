@@ -2,11 +2,16 @@ class FilmsController < ApplicationController
 
   hobo_model_controller
   
-  auto_actions :show
+  auto_actions :edit, :update
   
   auto_actions_for :user, :create
   
-  show_action :upload_file
+  def show
+    @film = Film.find params[:id]
+    if !@film.movie.file?
+      redirect_to @film, :edit
+    end
+  end
   
   web_method :upload do
     @this.movie = params[:Filedata]
@@ -18,7 +23,6 @@ class FilmsController < ApplicationController
     hobo_create do
       if valid?
         flash[:notice] = nil
-        redirect_to @this, :upload_file
       else
         @this = current_user
         render :template => "users/show"
