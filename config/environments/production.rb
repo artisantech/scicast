@@ -26,3 +26,11 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+ActionMailer::Base.delivery_method = :smtp
+
+ActionMailer::Base.smtp_settings = {
+  :address  => "smtp-relay.brightbox.net",
+  :port  => 25, 
+  :domain  => "brightbox.net"
+}
