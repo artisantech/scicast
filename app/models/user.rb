@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
     transition :activate, { :inactive => :active }, :available_to => :key_holder,
                :params => [ :post_film, :film_title, :film_description, :production_date, :license, :team_name, :team_info] do
       film = films.first
-      film.update_attributes :title => film_title, :description => film_description, :movie => file,
+      film.update_attributes :title => film_title, :description => film_description,
                              :team_name => team_name, :team_info => team_info,
                              :production_date => production_date,
                              :license => license, :submit_by_post => post_film
