@@ -63,6 +63,15 @@ class Film < ActiveRecord::Base
     lifecycle.active_step.name == :activate
   end
   
+  def unique_id
+    # SHA1 hash, translated into base 32 (!) to be more compact, truncated to first 6 characters
+    # or 7 if id >= 28838, where there is a collision
+    # (32 = 10 digits + 26 letters - 4 dodgy ones)
+    len = id >= 28838 ? 7 : 6
+    Digest::SHA1.hexdigest(id.to_s).to_i(16).to_s(32)[0...len].upcase.tr('O01I', 'WXYZ')
+  end
+    
+  
   # --- Permissions --- #
 
   def create_permitted?
