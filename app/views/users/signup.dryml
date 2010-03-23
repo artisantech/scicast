@@ -51,5 +51,6 @@
       
       <first-time-label:>First time your institution has entered SciCast?</first-time-label:>
     </field-list:>
+    <submit: label="Next &raquo;"/>
   </form:>
 </signup-page>
