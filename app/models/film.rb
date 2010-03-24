@@ -101,7 +101,7 @@ class Film < ActiveRecord::Base
   
   def upload_permitted?
     acting_user == user or
-      true
+      user.films.length == 1 && !movie.file?
   end
 
 
