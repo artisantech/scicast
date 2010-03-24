@@ -8,7 +8,7 @@
 
 <include src="paperclip" plugin="paperclip_with_hobo"/>
 
-<def tag="app-name">Scicast</def>
+<def tag="app-name">Planet SciCast</def>
 
 <extend tag="page">
   <old-page merge without-live-search without-main-nav>
@@ -46,3 +46,10 @@
                                                           }"/>
 </def>
 
+<def tag="input" for="User::FirstTime">
+  <input for-type="HoboFields::EnumString" merge labels="&{:dont_know => 'Don\'t Know'}"/>
+</def>
+
+<def tag="input" for="Film::License">
+  <input for-type="HoboFields::EnumString" merge labels="&{:cc_by => 'BY', :cc_by_nc_sa => 'BY NC SA'}"/>
+</def>

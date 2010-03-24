@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
   
-  WhereFrom = HoboFields::EnumString.for(:planet_science,
+  WhereFrom = HoboFields::EnumString.for :planet_science,
                                          :institute_of_physics,
                                          :local_authority,
                                          :gratnells,
                                          :exhibition,
                                          :recommendation,
                                          :other,
-                                         :dont_know)
+                                         :dont_know
+
+  FirstTime = HoboFields::EnumString.for :yes, :no, :dont_know
 
   hobo_user_model # Don't put anything above this
 
@@ -19,9 +21,8 @@ class User < ActiveRecord::Base
     institution :string, :required
 
     how_did_you_hear_about_us WhereFrom
-    
-    first_time enum_string(:yes, :no)
-    feedback :text
+    first_time                FirstTime
+    feedback                  :text
     
     administrator :boolean, :default => false
     timestamps

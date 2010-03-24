@@ -1,6 +1,7 @@
 class Film < ActiveRecord::Base
   
-  Status = HoboFields::EnumString.for :started, :in_progress, :pass, :fail
+  Status  = HoboFields::EnumString.for :not_started, :in_progress, :pass, :fail
+  License = HoboFields::EnumString.for :cc_by, :cc_by_nc_sa
 
   hobo_model # Don't put anything above this
 
@@ -16,7 +17,7 @@ class Film < ActiveRecord::Base
     
     duration :integer # In seconds
     
-    license enum_string(:cc_by, :cc_by_nc_sa)
+    license License
     
     music_status   Status
     video_status   Status

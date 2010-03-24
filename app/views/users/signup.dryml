@@ -50,6 +50,8 @@
       <team-name-label:>Your team name</team-name-label:>
       
       <first-time-label:>First time your institution has entered SciCast?</first-time-label:>
+      
+      <password-confirmation-label:>Password again</password-confirmation-label:>
     </field-list:>
     <submit: label="Next &raquo;"/>
   </form:>
