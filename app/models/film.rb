@@ -71,7 +71,9 @@ class Film < ActiveRecord::Base
     lifecycle.active_step.name == :activate
   end
   
-  def unique_id
+  def unique_identifier
+    return nil if id.nil?
+    
     # SHA1 hash, translated into base 32 (!) to be more compact, truncated to first 6 characters
     # or 7 if id >= 28838, where there is a collision
     # (32 = 10 digits + 26 letters - 4 dodgy ones)
