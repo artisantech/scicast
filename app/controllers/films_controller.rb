@@ -15,7 +15,7 @@ class FilmsController < ApplicationController
   
   web_method :upload do
     @this.movie = params[:Filedata]
-    @this.save!(false)
+    @this.save(false)
     render :nothing => true
   end
   
