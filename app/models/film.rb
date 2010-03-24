@@ -65,7 +65,7 @@ class Film < ActiveRecord::Base
   
   belongs_to :user, :creator => true
   
-  attr_protected *attachment_fields(:movie, :processed_movie, :thumbnail)
+  never_show *attachment_fields(:movie, :processed_movie, :thumbnail)
   
   def activating?
     lifecycle.active_step.name == :activate
