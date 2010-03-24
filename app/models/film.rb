@@ -47,9 +47,17 @@ class Film < ActiveRecord::Base
   validates_presence_of *(USER_FIELDS + [{:on => :update}])
   
   
-  with_options :storage => :s3,
-               :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-               :path => ":attachment/:id/:style.:extension" do |o|
+  
+  def self.paperclip_options
+    if Rails.env.staging?
+      # We're staging on heroku, so use S3
+      { :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => ":attachment/:id/:style.:extension" }
+    else
+      {}
+    end
+  end
+  
+  with_options(paperclip_options) do |o|
     o.has_attached_file :movie
     o.has_attached_file :processed_movie
     o.has_attached_file :thumbnail
