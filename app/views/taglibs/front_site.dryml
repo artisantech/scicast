@@ -14,7 +14,7 @@
   <old-page merge without-live-search without-main-nav>
     <account-nav: without-sign-up>
     <before-log-out:>
-      <li if="&current_user.administrator?"><a href="/admin/films">Admin</a></li>
+      <li if="&current_user.administrator?"><a href="#{admin_films_url}">Admin</a></li>
     </before-log-out:>
     </account-nav:>
   </old-page>

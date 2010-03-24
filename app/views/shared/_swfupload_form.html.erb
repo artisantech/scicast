@@ -6,7 +6,7 @@ window.onload = function(){
 var settings = {
   window_mode: "TRANSPARENT",
    
-	flash_url : "/flash/swfupload.swf",
+	flash_url : "<%= ActionController::Base.relative_url_root %>/flash/swfupload.swf",
 	upload_url: "<%= upload_url-%>",
 	post_params: {authenticity_token : "<%= form_authenticity_token-%>"},
 	file_size_limit : "100 MB",
