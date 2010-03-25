@@ -1,4 +1,4 @@
-.signup-page h2 { background: #8B000A; color: white; padding: 15px; cursor: pointer;}
+.signup-page h2 { background: #8B000A; color: white; padding: 15px; cursor: pointer;  -moz-border-radius: 10px; -webkit-border-radius: 10px}
 
 form th { text-align: right;}
 
@@ -34,11 +34,11 @@ a { background: #333; border-bottom: none; color: #ddd;}
 .card { background: #ccc; color: black; }
 .card a { background: #ddd; color: black; padding: 2px;}
 
-.page-header { background: none;}
+.page-header { background: none; width: 757px;}
 
 .content-body, .content-header { padding: 20px; }
   
-.signup-page .content-body, .signup-page .content-header { margin: 0; }
+.signup-page .content-body, .signup-page .content-header { margin: 0 10px; }
 
 .page-header h1 { display: none; }
 
