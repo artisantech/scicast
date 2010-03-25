@@ -83,6 +83,10 @@ class Film < ActiveRecord::Base
     len = id >= 28838 ? 7 : 6
     Digest::SHA1.hexdigest(id.to_s).to_i(16).to_s(32)[0...len].upcase.tr('O01I', 'WXYZ')
   end
+  
+  def ready?
+    movie.file? && agreements_posted?
+  end
     
   
   # --- Permissions --- #

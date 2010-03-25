@@ -33,6 +33,7 @@ a { background: #333; border-bottom: none; color: #ddd;}
 
 .card { background: #ccc; color: black; }
 .card a { background: #ddd; color: black; padding: 2px;}
+.card.film.ready { background: #ccc url(../images/check.png) no-repeat center right;}
 
 .page-header { background: none; width: 757px;}
 

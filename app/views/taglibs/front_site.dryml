@@ -21,7 +21,7 @@
 </extend>
 
 <def tag="card" for="Film">
-  <card class="film" param="default" merge>
+  <card class="film #{'ready' if this.ready?}" param="default" merge>
     <header: param>
       <h4 param="heading"><a/></h4>
     </header:>
