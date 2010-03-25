@@ -72,7 +72,7 @@ class Film < ActiveRecord::Base
     lifecycle.active_step.name == :activate
   end
   
-  def unique_identifier
+  def reference_code
     return nil if id.nil?
     
     # SHA1 hash, translated into base 32 (!) to be more compact, truncated to first 6 characters
