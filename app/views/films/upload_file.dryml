@@ -1,8 +1,0 @@
-<show-page>
-  <append-scripts:>
-    <%= swfupload_head %>
-  </append-scripts:>
-
-  <content:>
-  </content:>
-</show-page>
