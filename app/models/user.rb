@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   attr_accessor :film_description, :team_info, :type => :text
   attr_accessor :production_date, :type => :date
   attr_accessor :file
-  attr_accessor :license, :type => HoboFields::EnumString.for(:cc_by, :cc_by_nc_sa)
+  attr_accessor :license, :type => Film::License
   
   attr_accessor :post_film, :type => :boolean
   
