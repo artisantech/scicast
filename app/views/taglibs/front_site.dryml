@@ -33,8 +33,10 @@
       </div>
       <else>
         <div class="need-to-post-agreements" unless="agreements_posted">
-          <p>Submission of this film is not complete until you have printed, signed and posted the agreements.</p>
-          <p>Please <a>click here</a> to print the forms, or to tell us if you already have.</p>
+          <p>
+            Submission of this film is not complete until you have printed,<br /> signed and posted the agreements.
+            Please <a>click here</a>.
+          </p>
         </div>
       </else>
     </body:>

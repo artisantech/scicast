@@ -3,7 +3,8 @@
   <content-header:>
     <% unless @user.errors.any? -%>
       <h2 onclick="showLogin()">
-        Submitted a film already? Sign in to see your films or submit another &raquo;
+        Submitted a film already?<br />
+        Sign in to see your films or submit another &raquo;
       </h2>
 
       <form action="/users/login" class="login" style="display:none" id="login-form">
@@ -49,7 +50,7 @@
       <film-description-label:>Description of your film</film-description-label:>
       <team-name-label:>Your team name</team-name-label:>
       
-      <first-time-label:>First time your institution has entered SciCast?</first-time-label:>
+      <first-time-label:>First time?</first-time-label:>
       
       <password-confirmation-label:>Password again</password-confirmation-label:>
     </field-list:>

@@ -9,7 +9,7 @@ form th { text-align: right;}
 
 .signup-page #submit .field-list { width: 450px;}
 
-.show-page.user h3#submit-another { background: #8B000A; color: white; padding: 10px; cursor: pointer; margin: 40px 0 20px;}
+.show-page.user h3#submit-another { background: #8B000A; color: white; padding: 10px; cursor: pointer; margin: 40px 0 20px; -moz-border-radius: 10px; -webkit-border-radius: 10px}
 
 .show-page.user form .field-list { width: 450px;}
 
@@ -24,3 +24,30 @@ body.print-and-post address { margin: 30px; border: 1px solid #bbb; padding: 20p
 body.print-and-post .content-body ul { font-size: 14px; margin: 20px 20px;}
 body.print-and-post .content-body fieldset { margin: 20px 0; font-size: 14px; }
 
+/* --- Planet Scicast Look --- */
+
+html { background: black url(../images/background.jpg) no-repeat center top;}
+
+body { background: none; width: 757px; position: relative; margin: 0 auto; padding-top: 30px; color: #ccc;} 
+a { background: #333; border-bottom: none; color: #ddd;}
+
+.card { background: #ccc; color: black; }
+.card a { background: #ddd; color: black; padding: 2px;}
+
+.page-header { background: none;}
+
+.content-body, .content-header { padding: 20px; }
+  
+.signup-page .content-body, .signup-page .content-header { margin: 0; }
+
+.page-header h1 { display: none; }
+
+.page-header { background: url(../images/planet-scicast-logo2.png) no-repeat; height: 133px; 
+  position: absolute; left: 0; top: 20px; margin: 0;}
+
+.section.content { margin-left: 150px; background: black; padding-bottom: 10px;
+  -moz-border-radius-topleft: 20px; -moz-border-radius-bottomleft: 20px;
+  -webkit-border-radius-topleft: 20px; -webkit-border-radius-bottomleft: 20px;
+}
+
+.content-header, .content-body, .content-footer { margin:10px; padding:0; }

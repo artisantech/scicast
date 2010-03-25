@@ -6,6 +6,7 @@ class UserHints < Hobo::ViewHints
              :institution => "Your school, university, company - leave blank if it doesn't apply",
              :feedback    => "How's SciCast been for you? Enjoyed it? Found it useful? Think there's something we can do better? Please let us know!",
              :password    => "Choose a password for your SciCast account; you'll need it to complete your submission, and to check its progress through the system.",
+             :first_time  => "Is this the first time your institution has entered SciCast?",
 
              # File fields
              :post_film        => "Can't upload? Click this, and send your film by post. You'll need to send us a little paperwork later anyway.",
