@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <stylesheet name="print_and_post" media="all"/>
+  </head>
+  <body>
+    <image src="planet-scicast-logo.png"/>
+    <h1>SciCast Film Submission</h1>
+    <h2>Creative Commons Licence:</h2>
+
+    <div>
+      <label>Film Title:</label> <view:title/>
+    </div>
+  
+    <div>
+      <label>SciCast Reference Code:</label> <view:reference-code/>
+    </div>
+  
+    <div id="choices">
+      <h3>Please choose which section to fill in:</h3>
+      <p class='strong'>Either</p>
+      <ul><li>1) Film is all your own work</li></ul>
+      <p class='strong'>Or</p>
+      <ul><li>2) There are elements that are not made by you</li></ul>
+    </div>
+  
+    <h3>1) The film is all my own work!</h3>
+    <p>You have a choice: you can send us your film under an Attribution license, which permits free use of your film as long as you’re credited, or under the more restrictive Attribution/Non-Commercial/Share-Alike license. This also requires a credit for you, but in addition it prevents commercial organisations from using your film.</p>
+    <p>Our preference is to be able to distribute your film as widely as possible, for which we need the simpler Attribution license. While we’re sure your film is fabulous, we think it’s unlikely to be a money-spinner for anyone, and some of our project partners are, technically, commercial organisations.</p>
+    <p>However, you might not like the idea of any commercial organisation using your work (even if that means your film isn’t seen as widely). In which case, you should choose the Attribution/Non-Commercial/Share-Alike license.</p>
+    <p>To find out more about this decision, please see this page of notes at the SciCast Film School: <a href="http://www.planet-scicast.com/film_school/production_-_licensing.cfm">http://www.planet-scicast.com/film_school/production_-_licensing.cfm</a></p>
+  
+    <p>Once you’ve made your decision, tell us what it is here (tick one box only):</p>
+  
+    <p class='strong'>I wish to license my film under a:</p>
+  
+    <p><strong><tickbox/> Creative Commons Attribution license</strong> (SciCast’s preferred choice)</p>
+    <p class='strong'><tickbox/> Creative Commons Attribution/Non-Commercial/Share-Alike license</p>
+  
+    <sign-and-date/>
+  
+    <h3>2) The film contains material that was created by someone else</h3>
+  
+    <p>If your film contains material – music, photographs, video clips, sound effects, whatever – that you haven’t created, we’ll need to be sure that you have appropriate permission to use them. Here’s where you tell us about such material, so we can check.</p>
+  
+    <p>To help us work out which licence(s) can be attached to your film, please state what the material is in your film, and where you got it from. If you know what sort of licence it’s under then please tell us, but we’ll look it up if you don’t.</p>
+  
+    <p>Describe the material you’ve used (“photograph of Eiffel Tower,” “piano music”, whatever):</p>
+    <fill-in/>
+  
+    Source of material: (ideally, the web address of the page from which you downloaded it)
+    <fill-in/>
+  
+    <p>Type of Creative Commons Licence (if known – leave blank if not):</p>
+    <fill-in/>
+  
+    <p>Any other information you can provide to reassure us that your film can be published?:</p>
+    <fill-in/>
+    <fill-in/>
+    <fill-in/>
+  
+    <p>We’ll need this information for each still, music clip, sound effect, etc. in your film. Jot the details on a separate sheet and staple it to this, if necessary.</p>
+    <p>Please, don’t panic if you can’t complete everything here. Give us as much information as you can and send your film in anyway: we’ll work with you to help make sure your film can be published.</p>
+    <p>Once we’ve checked all the material in your film that isn’t yours, we’ll need to know your intentions for your parts of your film. Refer to the section above for notes about the two different Creative Commons licenses we use, then indicate your preference:</p>
+
+    <p class='strong'>I wish to license my film: (tick one box only)</p>
+  
+    <p><strong><tickbox/> as widely as possible, given any restrictions necessary to comply with licensing for third-party material. Ideally, this would imply a Creative Commons Attribution license</strong> (SciCast’s preferred choice)</p>
+    <p class='strong'><tickbox/> preventing commercial use, which most likely implies a Creative Commons Attribution/Non-Commercial/Share-Alike license.</p>
+
+    <sign-and-date/>
+  
+    <p>Finally please note: If you’ve used commercial music, images or film clips without securing permission of the owners of the work – <strong>we cannot publish your film</strong> – please re-edit to avoid this scenario! The most common reason for us turning down a film is people using music from a chart CD they bought: we can’t publish that!</p>
+  </body>
+</html>

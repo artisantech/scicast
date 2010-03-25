@@ -10,8 +10,14 @@ class FilmsController < ApplicationController
     @film = Film.find params[:id]
     if !@film.movie.file?
       redirect_to @film, :edit
+    elsif !@film.agreements_posted?
+      redirect_to @film, :print_and_post
     end
   end
+  
+  show_action :print_and_post
+  show_action :license
+  show_action :performer_consent
   
   web_method :upload do
     @this.movie = params[:Filedata]

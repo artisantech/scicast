@@ -1,0 +1,32 @@
+body { font-family: Tahoma, Arial, "sans serif"; font-size: 14px;}
+
+body { margin: 0; }
+
+img { float: right; }
+
+li { list-style-type: none;}
+
+p.strong, li { font-weight: bold;}
+p { clear: left; font-size: 14px; page-break-inside: avoid; }
+
+label { display:block; float: left; width: 50mm; clear: left; font-weight: bold; }
+
+
+span.short-fill-in { width: 50mm; margin-top: 8px;}
+span.fill-in { display:block; float: left; width: 100%; border-bottom: 1px solid black; margin-bottom: 5mm;}
+
+h1 { margin: 0; }
+h2 { margin-top: 5px;}
+h3 { clear: left; font-size: 14px; page-break-after: avoid; }
+
+.sign-and-date { overflow:hidden; zoom: 1; margin: 7mm 0 2mm;}
+.sign-and-date label { width: 20mm; margin: 10px; }
+.sign-and-date .short-fill-in {  float: left;}
+
+#choices p, #choices ul { margin: 3px; }
+
+.tickbox { font-size: 22px; font-weight: normal;}
+
+.box { border: 1px solid black; padding: 0 10px; margin: 10px 0 20px;}
+
+.section { margin-left: 30px;}

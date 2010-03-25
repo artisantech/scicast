@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <stylesheet name="print_and_post" media="all"/>
+  </head>
+  <body>
+    <image src="planet-scicast-logo.png"/>
+    <h1>SciCast Film Submission</h1>
+    <h2>Performer Consent:</h2>
+
+    <div>
+      <label>Film Title:</label> <view:title/>
+    </div>
+  
+    <div>
+      <label>SciCast Reference Code:</label> <view:reference-code/>
+    </div>
+
+    <p>If your school/organisation already has blanket consent for all performers:</p>
+    
+    <div class="section">
+      <p>tick here	<tickbox/> and sign here <short-fill-in/></p>
+
+      <p>You don't need to complete the remainder of this form: you’re done.</p>
+    </div>
+    
+    <p class='strong'>If this does not apply to your film, print/photocopy this form for every person who appears in your film.</p>
+    
+    <div class='box'>
+      <p>The person named below as the performer appears in a film that’s intended to be submitted to Planet SciCast. SciCast will enter the film into their competition, publish it on their website, and distribute it as widely as they can, so that as many people as possible can benefit from it.</p>
+      <p>This form is intended to show that the performer (and their parent or carer, if applicable), consents to this use of their performance.</p>
+    </div>
+    
+    <label>Producer name:</label> <short-fill-in/> (“The Producer”)
+    <div>(team leader or responsible contact person)</div><br/>
+    
+    <label>Performer name:</label> <short-fill-in/> (“Performer”)
+    
+    <p>I (the Performer) agree to give the Film’s Producer and distributors the following rights and permissions in respect of my appearance in the Film:</p>
+    
+    <p>1)	the right to use the Film and any material relating to the Film (“Material”) for any purpose provided the Material is not used in any way that would demean, insult or offend me or anyone else, or be used in a derogatory or obscene manner; and</p>
+    
+    <p>2)	the right for the Film to be shown without crediting me as a performer. (Your rights as a performer are protected by the Performances (Moral Rights, etc.) Regulations 2006, and as such you would normally have the right to be credited for your appearance in the Film. In the case of SciCast though, this will not be always be practical or desirable; for child protection reasons, we prefer to credit a team name or school only.)</p>
+    
+    <p>This Release will be governed and interpreted under English Law, as that’s where this document was originated.</p>
+    
+    <p><b>Performer</b> Print Name__________________________ Sign__________________________</p>
+    <p>If performer under 18 please also complete the following:</p>
+    <p><b>Parent/Guardian</b> Print name____________________ Sign__________________________</p>
+  </body>
+</html>

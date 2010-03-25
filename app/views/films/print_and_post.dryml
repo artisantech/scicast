@@ -1,0 +1,40 @@
+<def tag="print-button" attrs="name">
+  <iframe width="0" height="0" src="#{object_url(this)}/#{name}" name="#{name}"></iframe>
+  <button class="print-button" onclick="frames['#{name}'].focus(); frames['#{name}'].print();">Print</button>
+</def>
+
+<show-page title="Print and Post" without-creator-link without-parent-link without-edit-link without-record-flags>
+
+  <body: class="print-and-post"/>
+
+  <content-body:>
+    <h3>To complete your submission, we need you to print out and sign these:</h3>
+    <ul>
+      <li>
+        The Performer Consent Form
+        <print-button name="performer_consent"/>
+      </li>
+      <li>
+        The License form, giving us permission to publish your film
+        <print-button name="license"/>
+      </li>
+    </ul>
+    
+    <h3>The completed and signed forms should be sent to:</h3>
+    <address>
+      Somewhere<br />
+      Or Other<br />
+      AB1 2CD
+    </address>
+    
+    <h3>Please let us know when you have posted the forms, by checking this box</h3>
+    <form>
+      <fieldset>
+        <input:agreements_posted id="posted"/> <label for="posted">I have completed and posted the forms.</label>
+      </fieldset>
+      <submit label="Done"/>
+    </form>
+    
+  </content-body:>
+</show-page>
+  

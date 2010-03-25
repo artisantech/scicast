@@ -14,8 +14,13 @@ form th { text-align: right;}
 .show-page.user form .field-list { width: 450px;}
 
 .card.film { position: relative; }
-.no-movie { position: absolute; top: 5px; right: 5px; text-align: right; color: red;}
+.no-movie, .need-to-post-agreements { position: absolute; top: 5px; right: 5px; text-align: right; color: red;}
 
 .film.show-page form { margin-bottom: 30px;}
 
 form.upload { margin: 20px 0;}
+
+body.print-and-post address { margin: 30px; border: 1px solid #bbb; padding: 20px; width: 150px;}
+body.print-and-post .content-body ul { font-size: 14px; margin: 20px 20px;}
+body.print-and-post .content-body fieldset { margin: 20px 0; font-size: 14px; }
+

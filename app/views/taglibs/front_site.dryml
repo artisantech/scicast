@@ -31,6 +31,12 @@
         We do not have the movie file for this film.<br/>
         Please <a>Upload it</a> or <a>Let us know</a> that you will post it
       </div>
+      <else>
+        <div class="need-to-post-agreements" unless="agreements_posted">
+          <p>Submission of this film is not complete until you have printed, signed and posted the agreements.</p>
+          <p>Please <a>click here</a> to print the forms, or to tell us if you already have.</p>
+        </div>
+      </else>
     </body:>
   </card>
 </def>
@@ -53,3 +59,26 @@
 <def tag="input" for="Film::License">
   <input for-type="HoboFields::EnumString" merge labels="&{:cc_by => 'BY', :cc_by_nc_sa => 'BY NC SA'}"/>
 </def>
+
+
+<!-- Print and post tags -->
+
+<def tag="fill-in">
+  <span class="fill-in">&nbsp;</span>
+</def>
+
+<def tag="short-fill-in">
+  <span class="short-fill-in">____________________________</span>
+</def>
+
+<def tag="sign-and-date">
+  <div class="sign-and-date">
+    <div><label>Signed:</label> <short-fill-in/></div>
+    <div><label>Date:</label>   <short-fill-in/></div>
+  </div>
+</def>
+
+<def tag="tickbox">
+  <span class="tickbox">&#10063;</span>
+</def>
+

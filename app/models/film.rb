@@ -33,6 +33,8 @@ class Film < ActiveRecord::Base
     
     submit_by_post :boolean
     
+    agreements_posted :boolean
+    
     timestamps
   end
   
