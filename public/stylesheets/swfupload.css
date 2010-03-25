@@ -12,6 +12,7 @@
 .progressWrapper {
 	width: 357px;
 	overflow: hidden;
+	margin: 5px 0;
 }
 
 .progressContainer {
@@ -151,6 +152,7 @@ label {
 }*/
 
 #btnSubmit { margin: 0 0 0 155px ; }
+#btnUpload { margin: 0 0 10px; }
 
 .swfupload {
 	vertical-align: top;
