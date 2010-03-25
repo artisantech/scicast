@@ -1,4 +1,4 @@
-<show-page without-creator-link>
+<show-page without-creator-link without-record-flags>
   
   <field-list: fields="team_name, team_info, license, production_date"/>
   
