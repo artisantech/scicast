@@ -7,5 +7,4 @@ class FilmHints < Hobo::ViewHints
              :team_name       => "We'll use this to credit your team throughout the site.",
              :team_info       => "How many people were in the team? What ages were they? Did you have any help from teachers, technicians, parents, etc?"
   
-  
 end
