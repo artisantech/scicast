@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100325100449) do
+ActiveRecord::Schema.define(:version => 20100326075536) do
 
   create_table "films", :force => true do |t|
     t.string   "title"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20100325100449) do
     t.date     "production_date"
     t.boolean  "submit_by_post"
     t.boolean  "agreements_posted"
+    t.text     "others_material"
   end
 
   add_index "films", ["user_id"], :name => "index_films_on_user_id"

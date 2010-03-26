@@ -17,6 +17,6 @@
   </append-content-header:>
     
   <form:>
-    <field-list: fields="title, submit_by_post, description, production_date, team_name, team_info, license"/>
+    <field-list: fields="title, submit_by_post, description, production_date, others_material, team_name, team_info, license"/>
   </form:>
 </edit-page>

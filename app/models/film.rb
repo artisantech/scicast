@@ -29,6 +29,8 @@ class Film < ActiveRecord::Base
     
     aspect enum_string('4:3', '16:9')
     
+    others_material :text
+    
     published :boolean
     
     submit_by_post :boolean
@@ -44,6 +46,7 @@ class Film < ActiveRecord::Base
                     processed_movie tumbnail)
                     
   USER_FIELDS = %w(title description production_date license
+                   others_material
                    team_name team_info
                    license)
                    

@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   before_create { |user| user.administrator = true if !Rails.env.test? && count == 0 }
   
   attr_accessor :film_title, :team_name, :type => :string
-  attr_accessor :film_description, :team_info, :type => :text
+  attr_accessor :film_description, :team_info, :others_material, :type => :text
   attr_accessor :production_date, :type => :date
   attr_accessor :file
   attr_accessor :license, :type => Film::License
@@ -66,11 +66,12 @@ class User < ActiveRecord::Base
     end
     
     transition :activate, { :inactive => :active }, :available_to => :key_holder,
-               :params => [ :post_film, :film_title, :film_description, :production_date, :license, :team_name, :team_info] do
+               :params => [ :post_film, :film_title, :film_description, :production_date, :license, :others_material, :team_name, :team_info] do
       film = films.first
       film.update_attributes :title => film_title, :description => film_description,
                              :team_name => team_name, :team_info => team_info,
                              :production_date => production_date,
+                             :others_material => others_material,
                              :license => license, :submit_by_post => post_film
       film.save!                           
     end
@@ -98,7 +99,8 @@ class User < ActiveRecord::Base
   def update_permitted?
     acting_user.administrator? or
       (acting_user == self || lifecycle.valid_key?) && 
-      only_changed?(:email, :post_film, :film_title, :film_description, :production_date, :license, :team_name, :team_info,
+      only_changed?(:email, :post_film, :film_title, :film_description, :production_date, :license, :others_material,
+                    :team_name, :team_info,
                     :crypted_password, :current_password, :password, :password_confirmation)
     # Note: crypted_password has attr_protected so although it is permitted to change, it cannot be changed
     # directly from a form submission.
@@ -113,7 +115,7 @@ class User < ActiveRecord::Base
      acting_user.administrator? or
      acting_user == self or
      lifecycle.valid_key? && (
-       field.in?([:film_title, :film_description, :production_date, :license, :team_name, :team_info]) or
+       field.in?([:film_title, :film_description, :production_date, :license, :team_name, :team_info, :others_material]) or
        !(films.first && films.first.movie.file?) && field == :post_film
      )
   end
