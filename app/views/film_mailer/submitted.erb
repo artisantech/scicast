@@ -1,0 +1,13 @@
+Dear SciCast Admin,
+
+Another film has been submitted:
+
+Title: <%= @film.title %>
+Submitted by: <%= @film.user.name %> from <%= @film.user.institution %> (user id <%= @film.user.id %>)
+Database ID: <%= @film.id%>
+Reference code: <%= @film.reference_code %>
+Team name: <%= @film.team_name %>
+
+Have a nice day!
+
+  - SciCast email robot

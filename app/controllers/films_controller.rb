@@ -38,7 +38,14 @@ class FilmsController < ApplicationController
   
   def update
     hobo_update do
-      redirect_to @film.user if valid?
+      if valid?
+        if this.ready?
+          flash[:notice] = "Your film has been successfully submitted!"
+          this.submission_complete!
+          redirect_to @film.user
+        end
+        flash[:notice] = nil
+      end
     end
   end
 

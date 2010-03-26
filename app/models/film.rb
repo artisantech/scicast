@@ -87,7 +87,10 @@ class Film < ActiveRecord::Base
   def ready?
     movie.file? && agreements_posted?
   end
-    
+  
+  def submission_complete!
+    FilmMailer.deliver_submitted(self)
+  end
   
   # --- Permissions --- #
 
