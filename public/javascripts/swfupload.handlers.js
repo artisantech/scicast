@@ -76,7 +76,7 @@ function fileDialogComplete(numFilesSelected, numFilesQueued) {
 
 function uploadStart(file) {
 	try {
-	  $$('input[type=submit]').map(function(e) { e.disabled = true })  
+	  $$('input[type=submit]').map(function(e) { e.disabled = true; $(e).addClassName('disabled') })  
 	  $('btnCancel').show()
 	  swfu.setButtonDisabled(true)
 
@@ -166,7 +166,7 @@ function uploadError(file, errorCode, message) {
 }
 
 function uploadComplete(file) {
-  $$('input[type=submit]').map(function(e) { e.disabled = false })  
+  $$('input[type=submit]').map(function(e) { e.disabled = false; $(e).removeClassName('disabled') })  
   $('btnUpload').show()
   $('btnCancel').hide()
   swfu.setButtonDisabled(false)
