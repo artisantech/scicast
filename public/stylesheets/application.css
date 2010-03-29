@@ -29,6 +29,7 @@ body.print-and-post .content-body fieldset { margin: 20px 0; font-size: 14px; }
 html { background: black url(../images/background.jpg) no-repeat center top;}
 
 body { background: none; width: 757px; position: relative; margin: 0 auto; padding-top: 30px; color: #ccc;} 
+.login-page, .forgot-password-page { width: 757px; }
 a { background: #333; border-bottom: none; color: #ddd;}
 
 .card { background: #ccc; color: black; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: none;}
