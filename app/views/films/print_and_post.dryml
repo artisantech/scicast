@@ -28,7 +28,7 @@
       Tynemouth NE30 4JX
     </address>
     
-    <h3>Please let us know when you have posted the forms, by checking this box</h3>
+    <h3>Please let us know when you have posted the forms, by checking this box. If you don't check the box now, you will be able to return to this page later.</h3>
     <form>
       <fieldset>
         <input:agreements_posted id="posted"/> <label for="posted">I have completed and posted the forms.</label>
