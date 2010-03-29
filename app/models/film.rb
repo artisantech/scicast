@@ -114,7 +114,7 @@ class Film < ActiveRecord::Base
   end
 
   def view_permitted?(field)
-    true
+    new_record? || user == acting_user || acting_user.administrator?
   end
   
   def upload_permitted?
