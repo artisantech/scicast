@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     email :email_address, :login => true
     
     postcode    :string, :required
-    institution :string, :required
+    institution :string
 
     how_did_you_hear_about_us WhereFrom
     first_time                FirstTime
