@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
                                          :other,
                                          :dont_know
 
-  FirstTime = HoboFields::EnumString.for :yes, :no, :dont_know
+  FirstTime = HoboFields::EnumString.for :yes, :no, :dont_know, :not_applicable
 
   hobo_user_model # Don't put anything above this
 
