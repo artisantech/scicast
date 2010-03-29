@@ -87,6 +87,10 @@ class Film < ActiveRecord::Base
     Digest::SHA1.hexdigest(id.to_s).to_i(16).to_s(32)[0...len].upcase.tr('O01I', 'WXYZ')
   end
   
+  def needs_file?
+    !(movie.file? || submit_by_post?)
+  end
+  
   def ready?
     movie.file? && agreements_posted?
   end

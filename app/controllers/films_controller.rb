@@ -8,7 +8,7 @@ class FilmsController < ApplicationController
   
   def show
     @film = Film.find params[:id]
-    if !@film.movie.file?
+    if @film.needs_file?
       redirect_to @film, :edit
     elsif !@film.agreements_posted?
       redirect_to @film, :print_and_post
