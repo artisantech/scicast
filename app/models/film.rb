@@ -103,7 +103,7 @@ class Film < ActiveRecord::Base
 
   def update_permitted?
     acting_user.administrator? or
-      only_changed? *(USER_FIELDS + %w(submit_by_post movie_file_name movie_file_size movie_content_type movie_updated_at))
+      only_changed? *(USER_FIELDS + %w(submit_by_post movie_file_name movie_file_size movie_content_type movie_updated_at agreements_posted))
   end
 
   def destroy_permitted?
