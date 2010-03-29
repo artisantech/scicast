@@ -27,7 +27,7 @@
     </header:>
     <body: param>
       Team: <view:team-name param="team-name"/>
-      <div class='no-movie' unless="&this.movie.file?">
+      <div class='no-movie' if="&this.needs_file?">
         We do not have the movie file for this film.<br/>
         Please <a>Upload it</a> or <a>Let us know</a> that you will post it
       </div>
