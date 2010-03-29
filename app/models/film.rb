@@ -91,7 +91,7 @@ class Film < ActiveRecord::Base
   end
   
   def ready?
-    movie.file? && agreements_posted?
+    (!needs_file?) && agreements_posted?
   end
   
   def submission_complete!
