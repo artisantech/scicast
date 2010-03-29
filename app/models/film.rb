@@ -45,12 +45,11 @@ class Film < ActiveRecord::Base
                     aspect published
                     processed_movie tumbnail)
                     
-  USER_FIELDS = %w(title description production_date license
-                   others_material
-                   team_name team_info
-                   license)
+  REQUIRED_USER_FIELDS = %w(title description production_date license
+                            team_name team_info
+                            license)
                    
-  validates_presence_of *(USER_FIELDS + [{:on => :update}])
+  validates_presence_of *(REQUIRED_USER_FIELDS + [{:on => :update}])
   
   
   
@@ -107,7 +106,7 @@ class Film < ActiveRecord::Base
 
   def update_permitted?
     acting_user.administrator? or
-      only_changed? *(USER_FIELDS + %w(submit_by_post movie_file_name movie_file_size movie_content_type movie_updated_at agreements_posted))
+      only_changed? *(REQUIRED_USER_FIELDS + %w(submit_by_post movie_file_name movie_file_size movie_content_type movie_updated_at others_material agreements_posted))
   end
 
   def destroy_permitted?
