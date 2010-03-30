@@ -36,7 +36,7 @@ a { background: #333; border-bottom: none; color: #ddd;}
 .card a { background: #ddd; color: black; padding: 2px;}
 .card.film.ready { background: #ccc url(../images/check.png) no-repeat center right;}
 
-.page-header { background: none; width: 757px;}
+.page-header { background: none; width: 150px;}
 
 .content-body, .content-header { padding: 20px; }
   
@@ -55,3 +55,5 @@ a { background: #333; border-bottom: none; color: #ddd;}
 .content-header, .content-body, .content-footer { margin:10px; padding:0; }
 
 input.disabled { background: #999; color: #bbb;}
+
+.account-nav { position: absolute; width: 600px; right: -650px; font-size: 13px;}
