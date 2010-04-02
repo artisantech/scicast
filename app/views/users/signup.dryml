@@ -2,6 +2,16 @@
   
   <content-header:>
     <% unless @user.errors.any? -%>
+      <div class="note">
+      Hello. We know the holidays might make the paperwork difficult to
+      achieve by the deadline of the 16th of April. If this is the case with
+      your film/s please upload your film/s and print the forms as per the
+      online process, but you have an extra few days to get the paperwork to us,
+      in the post by the 22nd April at the very latest
+      please. 
+      </div>
+    
+    
       <h2 onclick="showLogin()">
         Submitted a film already?<br />
         Sign in to see your films or submit another &raquo;
