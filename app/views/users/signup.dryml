@@ -17,7 +17,7 @@
         Sign in to see your films or submit another &raquo;
       </h2>
 
-      <form action="/users/login" class="login" style="display:none" id="login-form">
+      <form action="#{base_url}/users/login" class="login" style="display:none" id="login-form">
         <labelled-item-list>
           <labelled-item>
             <item-label>Email</item-label>
