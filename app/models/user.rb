@@ -40,9 +40,6 @@ class User < ActiveRecord::Base
   
   attr_accessor :post_film, :type => :boolean
   
-  validates_presence_of :film_title, :film_description,
-                        :team_name, :team_info, :production_date, :license, :on => :update
-                        
   has_many :films
   
   after_create :create_film
@@ -84,6 +81,9 @@ class User < ActiveRecord::Base
                :params => [ :password, :password_confirmation ]
 
   end
+  
+  validates_presence_of :film_title, :film_description,
+                        :team_name, :team_info, :production_date, :license, :on => :activate
 
   def create_film
     films.create!
