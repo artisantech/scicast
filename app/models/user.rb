@@ -115,7 +115,7 @@ class User < ActiveRecord::Base
      acting_user.administrator? or
      acting_user == self or
      lifecycle.valid_key? && (
-       field.in?([:film_title, :film_description, :production_date, :license, :team_name, :team_info, :others_material]) or
+       field.in?([:film_title, :film_description, :production_date, :license, :team_name, :team_info, :others_material, :password, :password_confirmation]) or
        !(films.first && films.first.movie.file?) && field == :post_film
      )
   end
