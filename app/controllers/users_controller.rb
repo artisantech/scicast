@@ -30,5 +30,12 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  def forgot_password
+    if request.post?
+      user = model.find_by_email(params[:email_address]) and user.lifecycle.request_password_reset!(:nobody)
+      render_tag :forgot_password_email_sent_page
+    end
+  end
 
 end
