@@ -15,8 +15,16 @@
     <append-stylesheets:>
       <stylesheet name="admin"/>
     </append-stylesheets:>
+    <append-scripts:>
+      <javascript name="admin"/>
+    </append-scripts:>
     <footer:>
       <a href="#{base_url}/">View Site</a>
     </footer:>
   </old-page>
 </extend>
+
+<def tag="editor" for="Film::Status">
+  <editor for-type="HoboFields::EnumString" merge class="#{(this || 'not_started').dasherize}" />
+</def>
+

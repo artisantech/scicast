@@ -8,6 +8,11 @@ class FilmHints < Hobo::ViewHints
              :team_info       => "How many people were in the team? What ages were they? Did any adults help make the film, if so who and how? Or tell us if it's an all adult team.",
              :others_material => "Have you used anyone else's material in your film (music, photos, video clips)? If so, tell us here - give us as much information as you can. Ideally, include a link to the web page for the material."
   
-  field_names :others_material => "Material used"
+  field_names :others_material => "Material used",
+              :music_status    => "Music",
+              :video_status    => "Video",
+              :stills_status   => "Stills",
+              :safety_status   => "Safety",
+              :science_status  => "Science"
   
 end

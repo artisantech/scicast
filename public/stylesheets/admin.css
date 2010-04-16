@@ -1,2 +1,9 @@
 html, body { background: #333;}
 .page-header { background: #555; }
+
+select.in-progress { background: #757DFF; }
+select.pass        { background: #afa; }
+select.fail        { background: #E25354; }
+
+#filter-films form { display: inline; }
+#filter-films form div { display: inline; }

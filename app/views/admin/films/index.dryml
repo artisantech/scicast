@@ -1,0 +1,23 @@
+<def tag="view-if-blank"><view merge if-blank="&false"/></def>
+
+<index-page>
+  <after-heading:>
+    <div id="filter-films">
+      Show films: <filter-menu param-name="show" options="&['Submission Completed', 'Submission Not Completed']"/>
+    </div>
+  </after-heading:>
+
+  <collection: replace>
+    <table-plus fields="this, music_status, video_status, stills_status, safety_status, science_status"
+                field-tag="editor">
+      <this-view:>
+        <a/>
+        <div class="info">
+          Submitted by <view:user/>
+        </div>
+      </this-view:>
+    </table-plus>
+      
+  </collection:>
+  
+</index-page>
