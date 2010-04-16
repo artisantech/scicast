@@ -11,7 +11,7 @@
 <def tag="app-name">Scicast - Admin</def>
 
 <extend tag="page">
-  <old-page merge>
+  <old-page merge without-app-stylesheet>
     <append-stylesheets:>
       <stylesheet name="admin"/>
     </append-stylesheets:>
