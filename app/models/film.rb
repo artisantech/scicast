@@ -40,6 +40,8 @@ class Film < ActiveRecord::Base
     timestamps
   end
   
+  acts_as_taggable
+  
   ADMIN_FIELDS = %w(editorial_notes duration 
                     music_status video_status stills_status safety_status science_status
                     aspect published
