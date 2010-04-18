@@ -77,6 +77,10 @@ class Film < ActiveRecord::Base
   
   never_show *attachment_fields(:movie, :processed_movie, :thumbnail)
   
+  def title
+    read_attribute(:title) || "(No Title)"
+  end
+  
   def activating?
     lifecycle.active_step.name == :activate
   end
@@ -125,6 +129,9 @@ class Film < ActiveRecord::Base
   def upload_permitted?
     acting_user == user || user.state == 'inactive'
   end
+  
+  def tag_permitted?;   acting_user.administrator? end
+  def untag_permitted?; acting_user.administrator? end
 
 
 end

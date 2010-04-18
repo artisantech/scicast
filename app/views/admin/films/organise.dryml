@@ -1,0 +1,21 @@
+<page title="Film Organiser">
+  <body: class="organiser"/>
+  <scripts:>
+    <javascript name="underscore-min, jquery-1.3.2.min, jaml, jquery.entwine-dist, organiser"/>
+  </scripts:>
+  
+  <content:>
+    <div id="available-section">
+      <div class="controls">
+        Show: <select-menu id="show-menu" options="&['All'] + Tag.all.*.name"/>
+      </div>
+      <div id="available"></div>
+    </div>
+    <div id="selected-section">
+      <div class="controls">
+        Tag: <select-menu id="tag-menu" options="&Tag.all.*.name"/>
+      </div>
+      <div id="selected"></div>
+    </div>
+  </content:>
+</page>

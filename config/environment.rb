@@ -44,3 +44,4 @@ Rails::Initializer.run do |config|
 end
 
 HoboFields::MigrationGenerator.ignore_tables = %w(tags taggings)
+ActiveRecord::Base.include_root_in_json = false

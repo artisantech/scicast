@@ -1,5 +1,3 @@
-<def tag="view-if-blank"><view merge if-blank="&false"/></def>
-
 <index-page>
   <after-heading:>
     <div id="filter-films">
