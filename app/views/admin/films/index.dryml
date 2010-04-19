@@ -1,4 +1,7 @@
-<index-page>
+<index-page without-bottom-page-nav>
+  
+  <main-nav: current="Film Status"/>
+
   <after-heading:>
     <div id="filter-films">
       Show films: <filter-menu param-name="show" options="&['Submission Completed', 'Submission Not Completed']"/>

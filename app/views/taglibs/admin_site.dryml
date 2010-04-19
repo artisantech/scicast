@@ -10,6 +10,14 @@
 
 <def tag="app-name">Scicast - Admin</def>
 
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item with="&Film"><ht key="films.nav_item">Film Status</ht></nav-item>
+    <nav-item with="&Film" action="organise"><ht key="films.nav_item">Organiser</ht></nav-item>
+    <nav-item with="&User"><ht key="users.nav_item">Users</ht></nav-item>
+  </navigation>
+</def>
+
 <extend tag="page">
   <old-page merge without-app-stylesheet>
     <append-stylesheets:>
