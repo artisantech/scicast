@@ -1,0 +1,3 @@
+<show-page without-creator-link>
+  <after-heading:>Ref: <view:reference-code/></after-heading:>
+</show-page>
