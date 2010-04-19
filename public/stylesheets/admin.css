@@ -10,15 +10,31 @@ select.fail        { background: #E25354; }
 
 /* --- Organiser --- */
 
-body.organiser .content { overflow: hidden; padding: 10px;}
-body.organiser #available-section { padding: 0px; width: 50%; float: left;}
-body.organiser #selected-section  { padding: 0px; width: 50%; float: right;}
+body.organiser .content { padding: 10px; position: absolute; top: 127px; left: 50%; margin-left: -480px; width: 940px; bottom: 10px; background: #ccc;}
+
+
+body.organiser #available-section { position: absolute; top: 0; bottom: 0; left: 0; right: 50%; }
+body.organiser #selected-section  { position: absolute; top: 0; bottom: 0; left: 50%; right: 0; }
+body.organiser #available, body.organiser #selected { position: absolute; top: 30px; bottom: 0; left: 0px; right: 0px; overflow: auto; background: white; padding: 5px;}
+body.organiser .controls { padding: 5px 5px 3px; border-bottom: 1px solid #aaa; border-top: 1px solid #aaa;}
+
 body.organiser .film { border: 1px solid #ccc; margin: 5px 0; padding: 5px; background: #eee; overflow: hidden;}
 body.organiser #available .film { margin-right: 3px; }
 body.organiser #selected  .film { margin-left:  3px; }
-  body.organiser .film h3 { margin: 0; font-size: 13px; font-weight: bold;}
+  body.organiser .film h3 { margin: 0; font-size: 13px; font-weight: bold; }
   body.organiser .film .add-remove { float: right;}
   
-.tags ul, .tags li { display: inline; margin: 0; padding: 0; font-style: italic;}
+.tags {font-size: 11px; line-height: 11px; margin-top: 6px;}
+.tags ul, .tags li { display: inline; margin: 0; padding: 0; font-style: italic; }
 .tags li:after { content: ", ";}
 .tags li:last-child:after { content: "";}
+
+.film .ref-code { float: right; font-size: 10px; line-height: 10px; color: #888; clear: right; margin-top: 6px;}
+
+#filter-tags,  #filter-tags li { margin: 0; display: inline; }
+
+#show-menu { margin-left: 5px;}
+#filter-tags li { background: #D4E1F6; border: 1px solid #8EAFE8; -moz-border-radius: 9px; -webkit-border-radius: 9px; padding: 1px 2px 1px 2px; margin: 0 2px;}
+#filter-tags li button { background: transparent; color: #666; border: none; width: 14px; position: relative; bottom: 1px; cursor: pointer;}
+
+.input-help { display: none;}
