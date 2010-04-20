@@ -1,3 +1,9 @@
 <index-page>
   <new-link:>+ Create a New User</new-link:>
-  </index-page>
+  
+  <collection: replace>
+    <table-plus fields="name, email, institution">
+      <email-view:><%= h this %></email-view:>
+    </table-plus>
+  </collection:>
+</index-page>
