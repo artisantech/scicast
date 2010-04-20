@@ -1,6 +1,8 @@
 var films
 var filterTags = _(location.hash.substr(1).replace(/\+/g, ' ').split(',')).filter(function(t) { return t.length > 0 })
 
+var homeUrl = location.pathname.replace("/organise", "")
+
 $().ready(function() {
   getFilms()
   renderFilterTags()
@@ -11,7 +13,7 @@ function activeTag() {
 }
 
 function getFilms() {
-  url = filterTags.length == 0 ? '/admin/films' : '/admin/films?tags=' + filterTags.join(',')
+  url = homeUrl + (filterTags.length == 0 ? '' : '?tags=' + filterTags.join(','))
   $.getJSON(url, function(data) {
     films = data
     sortIntoColumns()
@@ -75,14 +77,14 @@ $('.film').entwine({
   addTag: function(tag) {
     if (!this.hasTag(tag)) {
       this.film().tag_list.push(tag)
-      $.post('/admin/films/' + this.film().id + '/tag', {name:tag}) 
+      $.post(homeUrl + '/' + this.film().id + '/tag', {name:tag}) 
     }
   },
   
   removeTag: function(tag) {
     if (this.hasTag(tag)) {
       _.remove(this.film().tag_list, tag)
-      $.post('/admin/films/' + this.film().id + '/untag', {name:tag}) 
+      $.post(homeUrl + '/' + this.film().id + '/untag', {name:tag}) 
     }
   },
   
@@ -174,10 +176,10 @@ Jaml.register('film', function(film) {
   
   div({cls:'film', id:"film-" +film.id},
     img({cls: (hasMovie ? 'movie-icon enabled' : 'movie-icon disabled'),
-         src: (hasThumb ? film.thumbnail_url : '/images/movie-small.png')
+         src: (hasThumb ? film.thumbnail_url : homeUrl + '/../../images/movie-small.png')
        }),
     button({cls:'add-remove'}),
-    h3(a({href: '/admin/films/' + film.id}, film.title)),
+    h3(a({href: homeUrl + '/' + film.id}, film.title)),
     div({cls:'ref-code'}, film.reference_code),
     div({cls:'tags'},
       "Tags:",

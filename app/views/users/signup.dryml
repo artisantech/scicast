@@ -3,8 +3,8 @@
   <content-header:>
     <% unless @user.errors.any? -%>
       <div class="note">
-        The submission deadline for 2010 has passed, but we're still accepting films while we work through the backlog. Sign up and start
-        the process as soon as you can, and make sure your paperwork is in the post this week, please (by April 23rd).
+        The submission deadline for 2010 has passed, but we're <b>still accepting films</b> while we work through the backlog. Sign up and
+        start the process as soon as you can, and make sure your paperwork is in the post this week, please (by April 23rd).
       </div>
     
     
