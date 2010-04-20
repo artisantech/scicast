@@ -110,7 +110,7 @@ class Film < ActiveRecord::Base
   # --- Permissions --- #
 
   def create_permitted?
-    acting_user.guest? || acting_user == user
+    acting_user.guest? || acting_user == user || acting_user.administrator?
   end
 
   def update_permitted?

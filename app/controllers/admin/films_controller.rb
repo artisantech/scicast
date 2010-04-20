@@ -4,6 +4,8 @@ class Admin::FilmsController < Admin::AdminSiteController
 
   auto_actions :index, :show, :edit, :update, :destroy
   
+  auto_actions_for :user, [:new, :create]
+  
   def index
     if params[:tags]
       @films = Film.find_tagged_with(params[:tags], :match_all => true)
