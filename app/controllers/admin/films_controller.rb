@@ -9,7 +9,7 @@ class Admin::FilmsController < Admin::AdminSiteController
   def index
     if params[:tags]
       @films = Film.find_tagged_with(params[:tags], :match_all => true)
-      render :text => @films.to_json(:only => ['title', 'id'], :methods => [:tag_list])
+      render_films_json
     else
       films = case params[:show]
               when "Submission Completed"
@@ -19,10 +19,10 @@ class Admin::FilmsController < Admin::AdminSiteController
               else
                 Film
               end
-      hobo_index films.apply_scopes(:search => [params[:search], :title]), :per_page => 10 do |respond|
+      hobo_index films.apply_scopes(:search => [params[:search], :title, :team_name]), :per_page => 10 do |respond|
         respond.html
         respond.js do
-          render :text => @films.to_json(:only => [:title, :id], :methods => [:tag_list, :reference_code, :web_movie_url, :thumbnail_url ])
+          render_films_json
         end
       end
     end
@@ -46,6 +46,12 @@ class Admin::FilmsController < Admin::AdminSiteController
     @this.processed_movie = params[:Filedata]
     @this.save(false)
     render :nothing => true
+  end
+  
+  private
+  
+  def render_films_json
+    render :text => @films.to_json(:only => [:title, :id], :methods => [:tag_list, :reference_code, :web_movie_url, :thumbnail_url ])
   end
 
 end

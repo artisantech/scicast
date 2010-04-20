@@ -171,8 +171,8 @@ function renderFilterTags() {
 Jaml.register('li', function(item) { li(item) })
   
 Jaml.register('film', function(film) {
-  hasMovie = film.web_movie_url;
-  hasThumb = film.thumbnail_url;
+  var hasMovie = film.web_movie_url;
+  var hasThumb = film.thumbnail_url;
   
   div({cls:'film', id:"film-" +film.id},
     img({cls: (hasMovie ? 'movie-icon enabled' : 'movie-icon disabled'),
