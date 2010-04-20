@@ -1,7 +1,7 @@
 <show-page without-creator-link>
   
   <heading: replace>
-    <img class='thumbnail' src="#{this.thumbnail.url(:large)}" if="thumbnail.file?"/>
+    <img class='thumbnail' src="#{base_url + this.thumbnail.url(:large)}" if="thumbnail.file?"/>
     <heading restore/>
     <div class='tags'>
       Tags:
