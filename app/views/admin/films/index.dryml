@@ -14,7 +14,7 @@
       <this-view:>
         <a/>
         <div class="info">
-          Submitted by <view:user/>
+          Team: <view:team_name/>
         </div>
       </this-view:>
     </table-plus>
