@@ -19,7 +19,7 @@
 </def>
 
 <extend tag="page">
-  <old-page merge without-app-stylesheet>
+  <old-page merge without-app-stylesheet without-live-search>
     <append-stylesheets:>
       <stylesheet name="admin"/>
     </append-stylesheets:>
