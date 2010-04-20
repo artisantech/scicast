@@ -11,7 +11,7 @@ class UserMailer < ActionMailer::Base
   private 
   
     def prepare_message(recipient, subject, body_attribtes)
-      host = Hobo::Controller.request_host
+      host = Hobo::Controller.request_host.remove(/^www\./)
       app_name = Hobo::Controller.app_name || host
 
       @recipients = recipient
