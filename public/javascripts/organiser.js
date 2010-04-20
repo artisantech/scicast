@@ -1,11 +1,9 @@
 var films
-var filterTags = []
+var filterTags = _(location.hash.substr(1).replace(/\+/g, ' ').split(',')).filter(function(t) { return t.length > 0 })
 
 $().ready(function() {
-  $.getJSON('/admin/films', function(data) {
-    films = data
-    sortIntoColumns()
-  });
+  getFilms()
+  renderFilterTags()
 })
 
 function activeTag() {
@@ -50,6 +48,24 @@ $('.film').entwine({
       $('#selected').append(this.owner().render())
       this.owner().remove()
     }
+  },
+  
+  '& .movie-icon.enabled': {
+    onclick: function() {
+      this.owner().find('.player-placeholder').html(this.owner().playerHtml())
+      this.addClass('open')
+    }
+  },
+
+  '& .movie-icon.enabled.open': {
+    onclick: function() {
+      this.owner().find('.player-placeholder').empty()
+      this.removeClass('open')
+    }
+  },
+
+  playerHtml: function() {
+    return $('#player').text().replace(/\[MOVIE-SRC\]/g, this.film().web_movie_url)
   },
   
   film: function() {
@@ -115,7 +131,8 @@ $('#show-menu').entwine({
   onchange: function() {
     if (this[0].selectedIndex != 0) {
       filterTags.push(this.val())
-      $('#filter-tags').html(Jaml.render('tag', filterTags))
+      setLocationHash()
+      renderFilterTags()
       getFilms()
       this[0].selectedIndex = 0
     }
@@ -126,35 +143,47 @@ $('#filter-tags button').entwine({
   onclick: function() {
     var li = this.closest('li')
     _.remove(filterTags, li.find('span').text())
-    if (filterTags.length == 0) {
-      $("#filter-tags").html("All")
-    } else {
-      li.remove()
-    }
+    setLocationHash()
+    renderFilterTags()
     getFilms()
   }
 })
-
 
 _.remove = function (array, elem) {
   array.splice(array.indexOf(elem), 1)
   return array
 }
 
+function setLocationHash() {
+  location.hash = filterTags.join(',').replace(/ /g, '+')
+}
+
+function renderFilterTags() {
+  $("#filter-tags").html(
+    filterTags.length == 0 ? "All" : Jaml.render('tag', filterTags)
+  )
+}
 
 // --- Templates ---
 
 Jaml.register('li', function(item) { li(item) })
   
 Jaml.register('film', function(film) {
+  hasMovie = film.web_movie_url;
+  hasThumb = film.thumbnail_url;
+  
   div({cls:'film', id:"film-" +film.id},
+    img({cls: (hasMovie ? 'movie-icon enabled' : 'movie-icon disabled'),
+         src: (hasThumb ? film.thumbnail_url : '/images/movie-small.png')
+       }),
     button({cls:'add-remove'}),
     h3(a({href: '/admin/films/' + film.id}, film.title)),
     div({cls:'ref-code'}, film.reference_code),
     div({cls:'tags'},
       "Tags:",
       ul(Jaml.render('li', film.tag_list))
-    )
+    ),
+    div({cls:'player-placeholder'})
   )
 })
 

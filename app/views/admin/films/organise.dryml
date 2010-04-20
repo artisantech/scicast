@@ -11,16 +11,17 @@
     <div id="available-section">
       <div class="controls">
         Show: 
-        <ul id="filter-tags">All</ul>
+        <ul class="tags" id="filter-tags">All</ul>
         <select-menu id="show-menu" options="&['Add Tag'] + Tag.all.*.name"/>
       </div>
       <div id="available"></div>
     </div>
     <div id="selected-section">
       <div class="controls">
-        Tag: <select-menu id="tag-menu" options="&Tag.all.*.name + ['New tag...']"/>
+        Tag: <tag-menu id="tag-menu"/>
       </div>
       <div id="selected"></div>
     </div>
+    <video-player id="player" width="400" height="285"/>
   </content:>
 </page>

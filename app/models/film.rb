@@ -70,7 +70,7 @@ class Film < ActiveRecord::Base
   with_options(paperclip_options) do |o|
     o.has_attached_file :movie
     o.has_attached_file :processed_movie
-    o.has_attached_file :thumbnail
+    o.has_attached_file :thumbnail, :styles => { :small => "38x35#", :large => "100x100#" }
   end
   
   belongs_to :user, :creator => true
@@ -107,6 +107,14 @@ class Film < ActiveRecord::Base
   
   def submission_complete!
     FilmMailer.deliver_submitted(self)
+  end
+  
+  def web_movie_url
+    processed_movie.url if processed_movie.file?
+  end
+
+  def thumbnail_url
+    thumbnail.url(:small) if thumbnail.file?
   end
   
   # --- Permissions --- #

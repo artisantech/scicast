@@ -1,3 +1,20 @@
 <show-page without-creator-link>
-  <after-heading:>Ref: <view:reference-code/></after-heading:>
+  
+  <heading: replace>
+    <img class='thumbnail' src="#{this.thumbnail.url(:large)}" if="thumbnail.file?"/>
+    <heading restore/>
+    <div class='tags'>
+      Tags:
+      <ul class="tags" id="tags">
+        <li repeat="tag_list">
+          <button>&times;</button>
+          <span><%= this %></span>
+        </li>
+        <else>None</else>
+      </ul>
+      <tag-menu first="Add tag"/>
+    </div>
+    <div class='ref'>Ref: <view:reference-code/></div>
+  </heading:>
+  
 </show-page>

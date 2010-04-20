@@ -6,8 +6,6 @@
 
 <set-theme name="clean"/>
 
-<include src="paperclip" plugin="paperclip_with_hobo"/>
-
 <def tag="app-name">Planet SciCast</def>
 
 <extend tag="page">
@@ -84,3 +82,12 @@
   <span class="tickbox">&#10063;</span>
 </def>
 
+<def tag="upload-user-movie">
+  <%= swfupload :controller => 'films', :action => 'upload', :id => this.id %>
+</def>
+
+<extend tag="card" for="Comment">
+  <old-card>
+    <after-creator-link:>, <view:created-at/></after-creator-link:>
+  </old-card>
+</extend>

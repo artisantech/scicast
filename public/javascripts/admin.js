@@ -7,6 +7,27 @@ Event.addBehavior({
       el.removeClassName('in-progress')
       el.removeClassName('not-started')
       el.addClassName(this.value.gsub('_', '-'))
+    },
+    
+    'body.film.show-page select.tag-menu:change' : function() {
+      if (this.selectedIndex != 0) {
+        tag = this.value == "New tag..." ? prompt("New Tag") : this.value
+
+        if (tag) {
+          $('tags').insert({bottom: "<li><button>&times;</button><span>" + tag + "</span></li>"});
+          new Ajax.Request(location + '/tag', { parameters: { name: tag } })
+        }
+      }
+      this.selectedIndex = 0
+    },
+    
+    'body.film.show-page ul.tags li button:click' : function() {
+      var tag = $(this).up('li').down('span').innerHTML
+      $(this).up('li').remove();
+      new Ajax.Request(location + '/untag', { parameters: { name: tag } })
     }
+    
+    
+    
     
 })

@@ -21,7 +21,9 @@ class Admin::FilmsController < Admin::AdminSiteController
               end
       hobo_index films.apply_scopes(:search => [params[:search], :title]), :per_page => 10 do |respond|
         respond.html
-        respond.js { render :text => @films.to_json(:only => [:title, :id], :methods => [:tag_list, :reference_code ]) }
+        respond.js do
+          render :text => @films.to_json(:only => [:title, :id], :methods => [:tag_list, :reference_code, :web_movie_url, :thumbnail_url ])
+        end
       end
     end
   end

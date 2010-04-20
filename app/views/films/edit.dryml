@@ -13,7 +13,7 @@
       <p>To complete the submission of your film, please upload the movie file and tell us some details about the film.</p>
       <p>If you have problems with the upload, you may submit your film by post. Please tick the box below.</p>
     </else>
-    <%= swfupload :controller => 'films', :action => 'upload', :id => @film.id %>
+    <upload-user-movie/>
   </append-content-header:>
     
   <form:>
