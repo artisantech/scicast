@@ -78,7 +78,7 @@ class Film < ActiveRecord::Base
   never_show *attachment_fields(:movie, :processed_movie, :thumbnail)
   
   def title
-    read_attribute(:title) || "(No Title)"
+    read_attribute(:title) || (new_record?? "" : "(No Title)")
   end
   
   def activating?
