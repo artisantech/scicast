@@ -129,6 +129,10 @@ class Film < ActiveRecord::Base
   def upload_permitted?
     acting_user == user || user.state == 'inactive'
   end
+
+  def upload_for_web_permitted?
+    acting_user.administrator?
+  end
   
   def tag_permitted?;   acting_user.administrator? end
   def untag_permitted?; acting_user.administrator? end

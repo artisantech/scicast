@@ -1,0 +1,17 @@
+<edit-page>
+  <append-scripts:>
+    <%= swfupload_head %>
+  </append-scripts:>
+  
+  <append-heading:>for <view:user/></append-heading:>
+  
+  <prepend-content-body:>
+    <upload-web-movie/>
+  </prepend-content-body:>
+  
+  <form: multipart>
+    <field-list: fields="title, thumbnail, team-name, team-info, editorial-notes, duration, license, production-date, aspect,
+                         others-material, published, music-status, video-status, stills-status, safety-status, science-status"/>
+                        
+  </form:>
+</edit-page>

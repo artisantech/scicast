@@ -37,5 +37,11 @@ class Admin::FilmsController < Admin::AdminSiteController
     this.save
     render :nothing => true
   end
+  
+  web_method :upload_for_web do
+    @this.processed_movie = params[:Filedata]
+    @this.save(false)
+    render :nothing => true
+  end
 
 end
