@@ -112,6 +112,7 @@ class User < ActiveRecord::Base
 
   def view_permitted?(field)
     new_record? or
+     field == :name or
      acting_user.administrator? or
      acting_user == self or
      lifecycle.valid_key? && (

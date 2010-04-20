@@ -14,5 +14,7 @@ class FilmHints < Hobo::ViewHints
               :stills_status   => "Stills",
               :safety_status   => "Safety",
               :science_status  => "Science"
+
+  children :comments
   
 end

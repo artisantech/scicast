@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100416090912) do
+ActiveRecord::Schema.define(:version => 20100420113329) do
+
+  create_table "comments", :force => true do |t|
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "film_id"
+    t.integer  "author_id"
+  end
+
+  add_index "comments", ["author_id"], :name => "index_comments_on_author_id"
+  add_index "comments", ["film_id"], :name => "index_comments_on_film_id"
 
   create_table "films", :force => true do |t|
     t.string   "title"

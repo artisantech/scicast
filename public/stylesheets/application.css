@@ -57,3 +57,5 @@ a { background: #333; border-bottom: none; color: #ddd;}
 input.disabled { background: #999; color: #bbb;}
 
 .account-nav { position: absolute; width: 600px; right: -650px; font-size: 13px;}
+
+.add-to-collection  { background: #555; }

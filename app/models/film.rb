@@ -74,6 +74,8 @@ class Film < ActiveRecord::Base
   end
   
   belongs_to :user, :creator => true
+  has_many :comments
+  has_many :commenters, :through => :comments, :source => :author, :uniq => true
   
   never_show *attachment_fields(:movie, :processed_movie, :thumbnail)
   
