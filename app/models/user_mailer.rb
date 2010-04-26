@@ -11,14 +11,14 @@ class UserMailer < ActionMailer::Base
   private 
   
     def prepare_message(recipient, subject, body_attribtes)
-      host = Hobo::Controller.request_host.remove(/^www\./)
       app_name = Hobo::Controller.app_name || host
 
       @recipients = recipient
       @subject    = "#{app_name} -- #{subject}"
-      @from       = "no-reply@#{host}"
+      @from       = APP_REPLY_ADDRESS
+
       @sent_on    = Time.now
       @headers    = {}
-      @body       = body_attribtes.merge :host => host, :app_name => app_name
+      @body       = body_attribtes.merge :host => APP_DOMAIN, :app_name => app_name
     end  
 end
