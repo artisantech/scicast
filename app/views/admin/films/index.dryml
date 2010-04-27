@@ -21,7 +21,9 @@
       </this-view:>
       <controls:/>
     </table-plus>
-      
+    
+    <video-player id="player" width="400" height="285"/>
+    
   </collection:>
   
 </index-page>

@@ -32,7 +32,4 @@ Event.addBehavior({
       new Ajax.Request(location.href.replace('/edit', '/untag'), { parameters: { name: tag } })
     }
     
-    
-    
-    
 })
