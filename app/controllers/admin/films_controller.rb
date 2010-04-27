@@ -19,7 +19,9 @@ class Admin::FilmsController < Admin::AdminSiteController
               else
                 Film
               end
-      hobo_index films.apply_scopes(:search => [params[:search], :title, :team_name, :reference_code]), :per_page => 10 do |respond|
+      hobo_index films.apply_scopes(:search => [params[:search], :title, :team_name, :reference_code],
+                                    :order_by => parse_sort_param(:title, :music, :video, :stills, :safety, :paperwork, :published)),
+                 :per_page => 10 do |respond|
         respond.html
         respond.js do
           render_films_json
