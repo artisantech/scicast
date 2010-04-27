@@ -10,9 +10,11 @@ select.fail        { background: #E25354; }
 
 .input-help { display: none;}
 
-form.upload { overflow: hidden; margin: -63px 0 20px; }
+form.upload { overflow: hidden; margin: -30px 0 20px; }
 
 div.tags { margin: 5px 0;}
+body.edit-page.film form.film { border-top: 1px solid #888; padding-top: 20px;}
+
 
 ul.tags, ul.tags li { margin: 0; display: inline; }
 ul.tags li { background: #D4E1F6; border: 1px solid #8EAFE8; -moz-border-radius: 9px; -webkit-border-radius: 9px; padding: 1px 2px 1px 2px; margin: 0 2px;}

@@ -5,6 +5,21 @@
   
   <append-heading:>for <view:user/></append-heading:>
   
+  <append-content-header:>
+    <div class='ref'>Ref: <view:reference-code/></div>
+    <div class='tags'>
+      Tags:
+      <ul class="tags" id="tags">
+        <li repeat="tag_list">
+          <button>&times;</button>
+          <span><%= this %></span>
+        </li>
+        <else>None</else>
+      </ul>
+      <tag-menu first="Add tag"/>
+    </div>
+  </append-content-header:>
+  
   <prepend-content-body:>
     <upload-web-movie/>
   </prepend-content-body:>
