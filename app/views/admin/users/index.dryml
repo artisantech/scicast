@@ -2,8 +2,9 @@
   <new-link:>+ Create a New User</new-link:>
   
   <collection: replace>
-    <table-plus fields="name, email, institution">
+    <table-plus fields="this, email, institution">
       <email-view:><%= h this %></email-view:>
+      <controls:/>
     </table-plus>
   </collection:>
 </index-page>
