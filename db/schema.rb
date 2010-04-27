@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100427075453) do
+ActiveRecord::Schema.define(:version => 20100427081116) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20100427075453) do
     t.string   "video_status"
     t.string   "stills_status"
     t.string   "safety_status"
-    t.string   "science_status"
+    t.string   "paperwork_status"
     t.string   "aspect"
     t.boolean  "published"
     t.integer  "user_id"

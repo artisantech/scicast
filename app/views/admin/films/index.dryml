@@ -9,7 +9,7 @@
   </after-heading:>
 
   <collection: replace>
-    <table-plus fields="this, music_status, video_status, stills_status, safety_status, science_status, published"
+    <table-plus fields="this, music_status, video_status, stills_status, safety_status, paperwork_status, published"
                 field-tag="editor">
       <this-view:>
         <img class='thumbnail' src="#{base_url + this.thumbnail.url(:small)}"/>

@@ -11,7 +11,7 @@
   
   <form: multipart>
     <field-list: fields="title, thumbnail, team-name, team-info, editorial-notes, duration, license, production-date, aspect,
-                         others-material, published, music-status, video-status, stills-status, safety-status, science-status"/>
+                         others-material, published, music-status, video-status, stills-status, safety-status, paperwork-status"/>
                         
   </form:>
 </edit-page>

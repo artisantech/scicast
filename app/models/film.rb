@@ -21,11 +21,11 @@ class Film < ActiveRecord::Base
     
     license License
     
-    music_status   Status
-    video_status   Status
-    stills_status  Status
-    safety_status  Status
-    science_status Status
+    music_status     Status
+    video_status     Status
+    stills_status    Status
+    safety_status    Status
+    paperwork_status Status
     
     production_date :date
     
@@ -45,7 +45,7 @@ class Film < ActiveRecord::Base
   acts_as_taggable
   
   ADMIN_FIELDS = %w(editorial_notes duration 
-                    music_status video_status stills_status safety_status science_status
+                    music_status video_status stills_status safety_status paperwork_status
                     aspect published
                     processed_movie tumbnail)
                     

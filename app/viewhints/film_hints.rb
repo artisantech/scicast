@@ -13,7 +13,7 @@ class FilmHints < Hobo::ViewHints
               :video_status    => "Video",
               :stills_status   => "Stills",
               :safety_status   => "Safety",
-              :science_status  => "Science"
+              :paperwork_status  => "Paperwork"
 
   children :comments
   
