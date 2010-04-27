@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100420113329) do
+ActiveRecord::Schema.define(:version => 20100427075453) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20100420113329) do
     t.boolean  "submit_by_post"
     t.boolean  "agreements_posted"
     t.text     "others_material"
+    t.string   "reference_code"
   end
 
   add_index "films", ["user_id"], :name => "index_films_on_user_id"
