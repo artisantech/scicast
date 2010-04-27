@@ -30,6 +30,8 @@ body.show-page.film .content-header { overflow: hidden;}
 .index-page.user .content-header { margin-bottom: 0;}
 .index-page.user .top-page-nav { margin-top: 10px;}
 
+body.show-page.film h3.add-form-heading { margin-bottom: 5px;}
+
 /* --- Organiser --- */
 
 body.organiser .content { padding: 10px; position: absolute; top: 127px; left: 10px; right: 10px; bottom: 10px; background: #ccc;}

@@ -1,0 +1,11 @@
+(PLEASE DO NOT REPLY TO THIS EMAIL - Use the link below)
+
+<%= @comment.author.name %> has posted a new comment on the film "<%= @comment.film.title %>"
+
+------
+<%= @comment.body %>
+------
+
+To reply, please use the following link:
+
+<%= film_url(:host => APP_DOMAIN, :id => @comment.film) %>

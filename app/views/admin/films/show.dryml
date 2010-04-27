@@ -17,4 +17,8 @@
     <div class='ref'>Ref: <view:reference-code/></div>
   </heading:>
   
+  <after-add-form-heading:>
+    Notice of new comments will be emailed to the film's submitter
+  </after-add-form-heading:>
+  
 </show-page>

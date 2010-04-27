@@ -9,6 +9,15 @@ class Comment < ActiveRecord::Base
   
   belongs_to :film
   belongs_to :author, :class_name => "User", :creator => true
+  
+  def email_recipients
+    ([film.user] | film.commenters) - [author]
+  end
+  
+  after_create :send_emails
+  def send_emails
+    FilmMailer.deliver_comment_posted(self)
+  end
 
   # --- Permissions --- #
 
