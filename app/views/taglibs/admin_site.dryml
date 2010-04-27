@@ -62,7 +62,7 @@
 </def>
 
 <def tag="tag-menu" attrs="first">
-  <select-menu merge-attrs class="tag-menu" options="&([first] + Tag.all.*.name + ['New tag...']).compact"/>
+  <select-menu merge-attrs class="tag-menu" options="&([first] + Tag.all.*.name.sort + ['New tag...']).compact"/>
 </def>
 
 <extend tag="card" for="Comment">

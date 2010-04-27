@@ -12,7 +12,7 @@
       <div class="controls">
         Show: 
         <ul class="tags" id="filter-tags">All</ul>
-        <select-menu id="show-menu" options="&['Add Tag'] + Tag.all.*.name"/>
+        <select-menu id="show-menu" options="&['Add Tag'] + Tag.all.*.name.sort"/>
       </div>
       <div id="available"></div>
     </div>
