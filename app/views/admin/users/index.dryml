@@ -1,4 +1,4 @@
-<index-page>
+<index-page without-bottom-page-nav>
   <new-link:>+ Create a New User</new-link:>
   
   <collection: replace>
