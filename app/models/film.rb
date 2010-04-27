@@ -57,6 +57,7 @@ class Film < ActiveRecord::Base
   
   named_scope :submission_completed, :conditions => "movie_file_name is not null and agreements_posted"
   named_scope :submission_not_completed, :conditions => "movie_file_name is null or not agreements_posted or agreements_posted is null"
+  named_scope :not_published, :conditions => "published is null or not published"
   
   
   

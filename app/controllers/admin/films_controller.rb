@@ -6,16 +6,18 @@ class Admin::FilmsController < Admin::AdminSiteController
   
   auto_actions_for :user, [:new, :create]
   
+  FILTER_SCOPES = { 'Submission Completed'     => :submission_completed, 
+                    'Submission Not Completed' => :submission_not_completed,
+                    'Published'                => :published,
+                    'Not Published'            => :not_published }
+  
   def index
     if params[:tags]
       @films = Film.find_tagged_with(params[:tags], :match_all => true)
       render_films_json
     else
-      films = case params[:show]
-              when "Submission Completed"
-                Film.submission_completed
-              when "Submission Not Completed"
-                Film.submission_not_completed
+      films = if (filter = FILTER_SCOPES[params[:show]])
+                Film.send(filter)
               else
                 Film
               end

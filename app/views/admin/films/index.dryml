@@ -4,7 +4,8 @@
 
   <after-heading:>
     <div id="filter-films">
-      Show films: <filter-menu param-name="show" options="&['Submission Completed', 'Submission Not Completed']"/>
+      Show films: <filter-menu param-name="show" 
+                               options="&['Submission Completed', 'Submission Not Completed', 'Published', 'Not Published']"/>
     </div>
   </after-heading:>
 
