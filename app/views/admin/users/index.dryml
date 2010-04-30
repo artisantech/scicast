@@ -2,7 +2,7 @@
   <new-link:>+ Create a New User</new-link:>
   
   <collection: replace>
-    <table-plus fields="this, email, institution">
+    <table-plus fields="this, email, institution" without-delete-button>
       <email-view:><%= h this %></email-view:>
       <controls:/>
     </table-plus>
