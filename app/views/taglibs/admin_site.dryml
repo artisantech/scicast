@@ -43,14 +43,14 @@
 <def tag="video-player" attrs="width, height, src">
   <script merge-attrs type="text/html">
     <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="#{width}" height="#{height}" class="video-player">
-    	<param name="movie" value="/player.swf" />
+    	<param name="movie" value="#{base_url}/player.swf" />
     	<param name="autostart" value="true" />
     	<param name="allowfullscreen" value="true" />
     	<param name="allowscriptaccess" value="always" />
     	<param name="flashvars" value="file=[MOVIE-SRC]&autostart=true" />
     	<embed
     		type="application/x-shockwave-flash"
-    		src="/player.swf" 
+    		src="#{base_url}/player.swf"
     		width="#{width}" 
     		height="#{height}"
     		allowscriptaccess="always" 
