@@ -15,7 +15,7 @@ class Film < ActiveRecord::Base
     editorial_notes :text
     unique_id :string
     
-    duration :integer # In seconds
+    duration :string
     
     reference_code :string
     
