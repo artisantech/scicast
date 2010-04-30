@@ -2,6 +2,7 @@ var films
 var filterTags = _(location.hash.substr(1).replace(/\+/g, ' ').split(',')).filter(function(t) { return t.length > 0 })
 
 var homeUrl = location.pathname.replace("/organise", "")
+var baseUrl = homeUrl + "/../../"
 
 $().ready(function() {
   getFilms()
@@ -67,7 +68,7 @@ $('.film').entwine({
   },
 
   playerHtml: function() {
-    return $('#player').text().replace(/\[MOVIE-SRC\]/g, this.film().web_movie_url)
+    return $('#player').text().replace(/\[MOVIE-SRC\]/g, baseUrl + this.film().web_movie_url)
   },
   
   film: function() {
@@ -176,7 +177,7 @@ Jaml.register('film', function(film) {
   
   div({cls:'film', id:"film-" +film.id},
     img({cls: (hasMovie ? 'movie-icon enabled' : 'movie-icon disabled'),
-         src: (hasThumb ? film.thumbnail_url : homeUrl + '/../../images/movie-small.png')
+         src: baseUrl + (hasThumb ? film.thumbnail_url : 'images/movie-small.png')
        }),
     button({cls:'add-remove'}),
     h3(a({href: homeUrl + '/' + film.id}, film.title)),
