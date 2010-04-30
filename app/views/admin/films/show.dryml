@@ -1,5 +1,7 @@
 <show-page without-creator-link>
   
+  <append-parent-link:> (<view:postcode/>)</append-parent-link:>
+  
   <heading: replace>
     <img class='thumbnail' src="#{base_url + this.thumbnail.url(:large)}" if="thumbnail.file?"/>
     <heading restore/>
