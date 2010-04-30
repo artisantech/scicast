@@ -68,7 +68,7 @@ $('.film').entwine({
   },
 
   playerHtml: function() {
-    return $('#player').text().replace(/\[MOVIE-SRC\]/g, baseUrl + this.film().web_movie_url)
+    return $('#player').text().replace(/\[MOVIE-SRC\]/g, baseUrl + this.film().web_movie_url.substr(1)) // substr to avoid double /
   },
   
   film: function() {
