@@ -34,6 +34,8 @@ body.show-page.film .content-header { overflow: hidden;}
 
 body.show-page.film h3.add-form-heading { margin-bottom: 5px;}
 body.show-page.film .note { background: #FFF9A5; padding: 3px;}
+body.film.show-page .thumbnail.enabled { cursor: pointer;}
+body.film.show-page .thumbnail.disabled { opacity: 0.5;}
 
 /* --- Organiser --- */
 

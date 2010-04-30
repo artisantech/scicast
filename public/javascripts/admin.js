@@ -30,6 +30,14 @@ Event.addBehavior({
       var tag = $(this).up('li').down('span').innerHTML
       $(this).up('li').remove();
       new Ajax.Request(location.href.replace('/edit', '/untag'), { parameters: { name: tag } })
-    }
+    },
+    
+    'body.film.show-page .thumbnail.enabled:click' : function() {
+      if ($('player-placeholder').innerHTML == "") {
+        $('player-placeholder').innerHTML = $('player').innerHTML
+      } else {
+        $('player-placeholder').innerHTML = ""
+      }
+    },
     
 })

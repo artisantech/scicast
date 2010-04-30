@@ -3,9 +3,10 @@
   <append-parent-link:> (<view:postcode/>)</append-parent-link:>
   
   <heading: replace>
-    <img class='thumbnail' src="#{base_url + this.thumbnail.url(:large)}" if="thumbnail.file?"/>
+    <img class='& "thumbnail " + (this.processed_movie.file?? "enabled" : "disabled")' src="#{base_url + this.thumbnail.url(:large)}"/>
     <heading restore/>
     <div class='ref'>Ref: <view:reference-code/></div>
+    <div id="player-placeholder"></div>
   </heading:>
   
   <after-add-form-heading:>
@@ -14,5 +15,9 @@
       <p>This contributor was added by an admin. The email address may not be verified and hence comments here may not reach the contributor</p>
     </div>
   </after-add-form-heading:>
+  
+  <append-body:>
+    <video-player id="player" width="480" height="360" src="&base_url + this.processed_movie.url" if="&this.processed_movie.file?"/>
+  </append-body:>
   
 </show-page>
