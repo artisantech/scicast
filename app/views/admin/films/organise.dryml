@@ -22,6 +22,6 @@
       </div>
       <div id="selected"></div>
     </div>
-    <video-player id="player" width="400" height="285"/>
+    <video-player id="player" width="480" height="360"/>
   </content:>
 </page>
