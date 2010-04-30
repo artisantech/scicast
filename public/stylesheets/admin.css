@@ -34,9 +34,11 @@ body.show-page.film .content-header { overflow: hidden;}
 
 body.show-page.film h3.add-form-heading { margin-bottom: 5px;}
 body.show-page.film .note { background: #FFF9A5; padding: 3px;}
-body.film.show-page .thumbnail.enabled { cursor: pointer;}
-body.film.show-page .thumbnail.disabled { opacity: 0.5;}
 
+.thumbnail.enabled { cursor: pointer;}
+.thumbnail.disabled { opacity: 0.5;}
+
+button.hider { display: block; margin: 0 auto;}
 /* --- Organiser --- */
 
 body.organiser .content { padding: 10px; position: absolute; top: 127px; left: 10px; right: 10px; bottom: 10px; background: #ccc;}
@@ -50,8 +52,6 @@ body.organiser .controls { padding: 5px 5px 3px; border-bottom: 1px solid #aaa; 
 body.organiser .film { border: 1px solid #ccc; margin: 5px 0; padding: 3px 5px; background: #eee; overflow: hidden; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
   body.organiser .film:first-child { margin-top:0; }
   body.organiser .film img { float: left; margin-right: 6px; margin-top: 1px;}
-    body.organiser .film img.enabled { cursor: pointer;}
-    body.organiser .film img.disabled { opacity: 0.5;}
   body.organiser .film h3 { margin: 0; font-size: 13px; font-weight: bold; }
   body.organiser .film .add-remove { float: right;}
   

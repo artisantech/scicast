@@ -10,10 +10,12 @@
   </after-heading:>
 
   <collection: replace>
+    <div id="player-placeholder"></div>
+  
     <table-plus fields="this, music_status, video_status, stills_status, safety_status, paperwork_status, published"
                 field-tag="editor" without-delete-button>
       <this-view:>
-        <img class='thumbnail' src="#{base_url + this.thumbnail.url(:small)}"/>
+        <movie-thumbnail size="small" movie-url="#{base_url}#{this.web_movie_url}"/>
         <a/> (<view:reference-code/>)
         <div class="info">
           Team: <view:team_name/>

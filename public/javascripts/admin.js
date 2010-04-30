@@ -39,5 +39,10 @@ Event.addBehavior({
         $('player-placeholder').innerHTML = ""
       }
     },
+
+    'body.film.index-page .thumbnail.enabled:click' : function() {
+      player = $('player').innerHTML.replace(/\[MOVIE-SRC\]/g, this.getAttribute('movie-url'))
+      $('player-placeholder').innerHTML = player + "<button class='hider' onclick='this.parentNode.innerHTML=\"\"'>Hide</button>"
+    }
     
 })

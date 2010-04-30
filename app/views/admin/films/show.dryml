@@ -3,7 +3,7 @@
   <append-parent-link:> (<view:postcode/>)</append-parent-link:>
   
   <heading: replace>
-    <img class='& "thumbnail " + (this.processed_movie.file?? "enabled" : "disabled")' src="#{base_url + this.thumbnail.url(:large)}"/>
+    <movie-thumbnail size="large"/>
     <heading restore/>
     <div class='ref'>Ref: <view:reference-code/></div>
     <div id="player-placeholder"></div>

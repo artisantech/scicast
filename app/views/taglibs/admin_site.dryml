@@ -71,3 +71,7 @@
     <after-creator-link:>, <view:created-at/></after-creator-link:>
   </old-card>
 </extend>
+
+<def tag="movie-thumbnail" attrs="size">
+  <img merge-attrs class='& "thumbnail " + (this.processed_movie.file?? "enabled" : "disabled")' src="#{base_url + this.thumbnail.url(size.to_sym)}"/>
+</def>

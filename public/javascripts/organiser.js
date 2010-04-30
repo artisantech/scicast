@@ -176,7 +176,7 @@ Jaml.register('film', function(film) {
   var hasThumb = film.thumbnail_url;
   
   div({cls:'film', id:"film-" +film.id},
-    img({cls: (hasMovie ? 'movie-icon enabled' : 'movie-icon disabled'),
+    img({cls: (hasMovie ? 'thumbnail enabled' : 'thumbnail disabled'),
          src: baseUrl + (hasThumb ? film.thumbnail_url : 'images/movie-small.png')
        }),
     button({cls:'add-remove'}),
