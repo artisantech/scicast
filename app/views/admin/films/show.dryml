@@ -8,6 +8,9 @@
   
   <after-add-form-heading:>
     Notice of new comments will be emailed to the film's submitter
+    <div class='note' if="&this.user.created_by_admin?">
+      <p>This contributor was added by an admin. The email address may not be verified and hence comments here may not reach the contributor</p>
+    </div>
   </after-add-form-heading:>
   
 </show-page>

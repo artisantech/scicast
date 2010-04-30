@@ -33,6 +33,7 @@ body.show-page.film .content-header { overflow: hidden;}
 .index-page.user .top-page-nav { margin-top: 10px;}
 
 body.show-page.film h3.add-form-heading { margin-bottom: 5px;}
+body.show-page.film .note { background: #FFF9A5; padding: 3px;}
 
 /* --- Organiser --- */
 

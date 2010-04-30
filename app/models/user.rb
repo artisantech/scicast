@@ -25,9 +25,14 @@ class User < ActiveRecord::Base
     feedback                  :text
     
     administrator :boolean, :default => false
+    
+    created_by_admin :boolean, :default => false
+    
     timestamps
   end
-
+  
+  attr_protected :created_by_admin
+  
   # This gives admin rights to the first sign-up.
   # Just remove it if you don't want that
   before_create { |user| user.administrator = true if !Rails.env.test? && count == 0 }
@@ -87,6 +92,12 @@ class User < ActiveRecord::Base
 
   def create_film
     films.create!
+  end
+  
+  def mark_created_by_admin!
+    self.state = 'active'
+    self.created_by_admin = true
+    save!
   end
   
 

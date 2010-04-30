@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100427081116) do
+ActiveRecord::Schema.define(:version => 20100430135401) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20100427081116) do
     t.string   "first_time"
     t.float    "lat"
     t.float    "lng"
+    t.boolean  "created_by_admin",                        :default => false
   end
 
   add_index "users", ["state"], :name => "index_users_on_state"
