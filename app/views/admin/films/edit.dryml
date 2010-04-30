@@ -25,7 +25,7 @@
   </prepend-content-body:>
   
   <form: multipart>
-    <field-list: fields="title, thumbnail, team-name, team-info, editorial-notes, duration, license, production-date, aspect,
+    <field-list: fields="title, thumbnail, description, team-name, team-info, editorial-notes, duration, license, production-date, aspect,
                          others-material, published, music-status, video-status, stills-status, safety-status, paperwork-status"/>
                         
   </form:>
