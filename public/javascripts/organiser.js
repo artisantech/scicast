@@ -53,14 +53,14 @@ $('.film').entwine({
     }
   },
   
-  '& .movie-icon.enabled': {
+  '& .thumbnail.enabled': {
     onclick: function() {
       this.owner().find('.player-placeholder').html(this.owner().playerHtml())
       this.addClass('open')
     }
   },
 
-  '& .movie-icon.enabled.open': {
+  '& .thumbnail.enabled.open': {
     onclick: function() {
       this.owner().find('.player-placeholder').empty()
       this.removeClass('open')
