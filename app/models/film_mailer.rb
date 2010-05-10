@@ -11,8 +11,9 @@ class FilmMailer < ActionMailer::Base
   end
   
   def comment_posted(comment)
+    film - comment.film
     @recipients = comment.email_recipients.*.email
-    @subject    = "SciCast Submissions -- New comment on #{comment.film.title}"
+    @subject    = "SciCast Submissions -- New comment on #{film.title} (#{film.reference_code})"
     @from       = APP_REPLY_ADDRESS
     @sent_on    = Time.now
     @headers    = {}
