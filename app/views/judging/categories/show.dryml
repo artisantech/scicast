@@ -1,0 +1,13 @@
+<show-page without-field-list>
+  <append-content-body:>
+    <collection:films>
+    
+      <card:>
+        <before-heading:>
+          <movie-thumbnail size="large"/>
+        </before-heading:>
+      </card:>    
+      <empty-message:>There are currently no films in this category</empty-message:>
+    </collection>
+  </append-content-body:>
+</show-page>

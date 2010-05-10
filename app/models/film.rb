@@ -136,7 +136,7 @@ class Film < ActiveRecord::Base
   end
 
   def view_permitted?(field)
-    new_record? || user == acting_user || acting_user.administrator? || user.state == 'inactive'
+    new_record? || user == acting_user || acting_user.administrator? || user.state == 'inactive' || acting_user.judge?
   end
   
   def upload_permitted?
@@ -149,6 +149,5 @@ class Film < ActiveRecord::Base
   
   def tag_permitted?;   acting_user.administrator? end
   def untag_permitted?; acting_user.administrator? end
-
 
 end

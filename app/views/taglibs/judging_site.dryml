@@ -1,0 +1,26 @@
+<!-- Tag definitions for the Judging subsite -->
+  
+<include src="rapid" plugin="hobo"/>
+
+<include src="taglibs/auto/judging/rapid/cards"/>
+<include src="taglibs/auto/judging/rapid/pages"/>
+<include src="taglibs/auto/judging/rapid/forms"/>
+
+<set-theme name="clean"/>
+
+<def tag="app-name">Planet SciCast - Judging</def>
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item with="&Category"><ht key="categories.nav_item">Categories</ht></nav-item>
+  </navigation>
+</def>
+
+<extend tag="page">
+  <old-page merge without-app-stylesheet without-live-search>
+    <append-stylesheets:>
+      <stylesheet name="judging"/>
+    </append-stylesheets:>
+  </old-page>
+</extend>
+

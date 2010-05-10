@@ -1,0 +1,2 @@
+module Judging::UsersHelper
+end

@@ -1,0 +1,2 @@
+module Judging::CategoriesHelper
+end

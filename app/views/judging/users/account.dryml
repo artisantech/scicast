@@ -1,0 +1,3 @@
+<account-page>
+  <field-list: fields="email, current_password, password, password_confirmation"/>
+</account-page>

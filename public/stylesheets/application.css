@@ -16,6 +16,7 @@ form th { text-align: right;}
 .card.film { position: relative; }
 .no-movie, .need-to-post-agreements { text-align: right; color: red;}
 
+.film.show-page .content-header { overflow: hidden; height: auto; }
 .film.show-page form { margin-bottom: 30px;}
 
 form.upload { margin: 20px 0;}
@@ -23,6 +24,11 @@ form.upload { margin: 20px 0;}
 body.print-and-post address { margin: 30px; border: 1px solid #bbb; padding: 20px; width: 200px;}
 body.print-and-post .content-body ul { font-size: 14px; margin: 20px 20px;}
 body.print-and-post .content-body fieldset { margin: 20px 0; font-size: 14px; }
+body.print-and-post .links { margin: 20px 0; font-size: 14px;}
+body.print-and-post .links a { padding: 4px;}
+
+#reprint-paperwork { float: right; margin-bottom: 10px;}
+
 
 /* --- Planet Scicast Look --- */
 

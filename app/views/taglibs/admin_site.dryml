@@ -12,9 +12,10 @@
 
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
-    <nav-item with="&Film"><ht key="films.nav_item">Film Status</ht></nav-item>
-    <nav-item with="&Film" action="organise"><ht key="films.nav_item">Organiser</ht></nav-item>
-    <nav-item with="&User"><ht key="users.nav_item">Users</ht></nav-item>
+    <nav-item with="&Film">Film Status</nav-item>
+    <nav-item with="&Film" action="organise">Organiser</nav-item>
+    <nav-item with="&User">Users</nav-item>
+    <nav-item with="&Category">Categories</nav-item>
   </navigation>
 </def>
 
@@ -72,6 +73,6 @@
   </old-card>
 </extend>
 
-<def tag="movie-thumbnail" attrs="size">
-  <img merge-attrs class='& "thumbnail " + (this.processed_movie.file?? "enabled" : "disabled")' src="#{base_url + this.thumbnail.url(size.to_sym)}"/>
+<def tag="input" for="Tag">
+  <select-one blank-message="Select a tag"/>
 </def>

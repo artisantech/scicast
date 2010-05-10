@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
     feedback                  :text
     
     administrator :boolean, :default => false
+    judge         :boolean, :default => false
     
     created_by_admin :boolean, :default => false
     
@@ -46,6 +47,10 @@ class User < ActiveRecord::Base
   attr_accessor :post_film, :type => :boolean
   
   has_many :films
+  
+  has_many :judge_assignments, :foreign_key => "judge_id"
+  has_many :categories, :through => :judge_assignments, :accessible => true
+  
   
   after_create :create_film
   
@@ -124,7 +129,7 @@ class User < ActiveRecord::Base
   def view_permitted?(field)
     new_record? or
      field == :name or
-     acting_user.administrator? or
+     acting_user.administrator? || acting_user.judge? or
      acting_user == self or
      lifecycle.valid_key? && (
        field.in?([:film_title, :film_description, :production_date, :license, :team_name, :team_info, :others_material, :password, :password_confirmation]) or

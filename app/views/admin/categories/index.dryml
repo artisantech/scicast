@@ -1,0 +1,21 @@
+<index-page without-count>
+  <collection:>
+    <card:>
+      <heading:><editor:name/></heading:>
+      <append-header:>
+        <editor:tag blank-message="Select a tag"/>
+      </append-header:>
+      <body:>
+        <div class="judges">
+          <if test="&this.judges">
+            Judges:
+            <repeat:judges join=", "><a/></repeat:judges>
+          </if>
+          <else>
+            No Judges
+          </else>
+        </div>
+      </body:>
+    </card:>
+  </collection:>
+</index-page>

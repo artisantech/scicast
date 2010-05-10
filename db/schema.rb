@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100430161251) do
+ActiveRecord::Schema.define(:version => 20100510083443) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tag_id"
+  end
+
+  add_index "categories", ["tag_id"], :name => "index_categories_on_tag_id"
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -62,6 +71,16 @@ ActiveRecord::Schema.define(:version => 20100430161251) do
 
   add_index "films", ["user_id"], :name => "index_films_on_user_id"
 
+  create_table "judge_assignments", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "judge_id"
+    t.integer  "category_id"
+  end
+
+  add_index "judge_assignments", ["category_id"], :name => "index_judge_assignments_on_category_id"
+  add_index "judge_assignments", ["judge_id"], :name => "index_judge_assignments_on_judge_id"
+
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -96,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20100430161251) do
     t.float    "lat"
     t.float    "lng"
     t.boolean  "created_by_admin",                        :default => false
+    t.boolean  "judge",                                   :default => false
   end
 
   add_index "users", ["state"], :name => "index_users_on_state"

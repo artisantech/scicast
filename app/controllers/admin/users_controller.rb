@@ -14,7 +14,11 @@ class Admin::UsersController < Admin::AdminSiteController
     hobo_create do
       if valid?
         @user.mark_created_by_admin!
-        redirect_to @user.films.first, :edit
+        if @user.judge
+          redirect_to User
+        else
+          redirect_to @user.films.first, :edit
+        end
       end
     end
   end

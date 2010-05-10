@@ -1,0 +1,11 @@
+<index-page without-count>
+  <heading:>Your Categories</heading:>
+  
+  <collection:>
+    <card:>
+      <append-header:><count:films label="film"/></append-header:>
+    </card:>
+
+    <empty-message:>The site administrator has not yet assigned you to any judging categories</empty-message:>
+  </collection:>
+</index-page>

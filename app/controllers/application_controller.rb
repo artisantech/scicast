@@ -7,4 +7,15 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  def home_page
+    if current_user.administrator?
+      admin_films_path
+    elsif current_user.judge?
+      judging_categories_path
+    else
+      obejct_url current_user
+    end
+  end
+  
 end
