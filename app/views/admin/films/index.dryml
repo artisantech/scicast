@@ -27,7 +27,7 @@
       <controls:/>
     </table-plus>
     
-    <video-player id="player" width="480" height="360"/>
+    <video-player/>
     
   </collection:>
   

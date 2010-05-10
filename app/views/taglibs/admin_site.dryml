@@ -41,9 +41,9 @@
   <%= swfupload({:controller => 'admin/films', :action => 'upload_for_web', :id => this.id}, 'shared', 'web_movie_upload_form') %>
 </def>
 
-<def tag="video-player" attrs="width, height, src">
-  <% src ||= "[MOVIE-SRC]" -%>
-  <script merge-attrs type="text/html">
+<def tag="video-player" attrs="id, width, height, src">
+  <% id ||= "player"; src ||= "[MOVIE-SRC]"; height ||= "480"; width ||= "384" -%>
+  <script merge-attrs id="#{id}" type="text/html">
     <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="#{width}" height="#{height}" class="video-player">
     	<param name="movie" value="#{base_url}/player.swf" />
     	<param name="autostart" value="true" />
