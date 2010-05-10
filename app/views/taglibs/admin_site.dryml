@@ -42,7 +42,7 @@
 </def>
 
 <def tag="video-player" attrs="id, width, height, src">
-  <% id ||= "player"; src ||= "[MOVIE-SRC]"; height ||= "480"; width ||= "384" -%>
+  <% id ||= "player"; src ||= "[MOVIE-SRC]"; height ||= "384"; width ||= "480" -%>
   <script merge-attrs id="#{id}" type="text/html">
     <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="#{width}" height="#{height}" class="video-player">
     	<param name="movie" value="#{base_url}/player.swf" />
