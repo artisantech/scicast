@@ -5,8 +5,8 @@ select.in-progress { background: #757DFF; }
 select.pass        { background: #afa; }
 select.fail        { background: #E25354; }
 
-#filter-films form { display: inline; }
-#filter-films form div { display: inline; }
+#filter-films form, #per-page form { display: inline; }
+#filter-films form div, #per-page form div { display: inline; }
 
 .input-help { display: none;}
 

@@ -7,6 +7,9 @@
       Show films: <filter-menu param-name="show" 
                                options="&['Submission Completed', 'Submission Not Completed', 'Published', 'Not Published']"/>
     </div>
+    <div id="per-page">
+      Per Page: <filter-menu param-name="n" no-filter="10" options="&%w(25 50 100)"/>
+    </div>
   </after-heading:>
 
   <collection: replace>

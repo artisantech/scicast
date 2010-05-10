@@ -12,6 +12,8 @@ class Admin::FilmsController < Admin::AdminSiteController
                     'Not Published'            => :not_published }
   
   def index
+    per_page = params[:n] || 10
+    
     if params[:tags]
       @films = Film.find_tagged_with(params[:tags], :match_all => true)
       render_films_json
@@ -23,7 +25,7 @@ class Admin::FilmsController < Admin::AdminSiteController
               end
       hobo_index films.apply_scopes(:search => [params[:search], :title, :team_name, :reference_code],
                                     :order_by => parse_sort_param(:title, :music, :video, :stills, :safety, :paperwork, :published)),
-                 :per_page => 10 do |respond|
+                 :per_page => per_page do |respond|
         respond.html
         respond.js do
           render_films_json
