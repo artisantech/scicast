@@ -6,6 +6,10 @@
   
   <edit-link:>Edit Details</edit-link:>
   
+  <append-content-header:>
+    <a id="reprint-paperwork" action="print_and_post">Reprint Paperwork</a>
+  </append-content-header:>
+  
   <add-form-heading:>Reply</add-form-heading:>
   <form:>
     <submit: label="Reply"/>
