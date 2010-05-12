@@ -1,6 +1,6 @@
 <show-page without-creator-link>
   
-  <append-parent-link:> (<view:postcode/>)</append-parent-link:>
+  <append-parent-link:> (<view:postcode.upcase/>)</append-parent-link:>
   
   <heading: replace>
     <movie-thumbnail size="large"/>
