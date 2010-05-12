@@ -11,7 +11,7 @@ Event.addBehavior({
     
     'body.film.edit-page select.tag-menu:change' : function() {
       if (this.selectedIndex != 0) {
-        tag = this.value == "New tag..." ? prompt("New Tag") : this.value
+        var tag = this.value == "New tag..." ? prompt("New Tag") : this.value
         
         if (tag) {
           if ($$('#tags li').length == 0) {
@@ -41,7 +41,7 @@ Event.addBehavior({
     },
 
     'body.film.index-page .movie-icon.enabled:click' : function() {
-      player = $('player').innerHTML.replace(/\[MOVIE-SRC\]/g, this.getAttribute('movie-url'))
+      var player = $('player').innerHTML.replace(/\[MOVIE-SRC\]/g, this.getAttribute('movie-url'))
       $('player-placeholder').innerHTML = player + "<button class='hider' onclick='this.parentNode.innerHTML=\"\"'>Hide</button>"
     }
     
