@@ -15,6 +15,13 @@ class Category < ActiveRecord::Base
   def films
     Film.find_tagged_with(tag).tap { |films| films.origin = self; films.origin_attribute = :films }
   end
+  
+  def duplicate
+    dup = Category.new :name => "Copy of #{name}"
+    judges.each { |j| dup.judges << j }
+    dup.save!
+    dup
+  end
 
   # --- Permissions --- #
 
@@ -27,6 +34,10 @@ class Category < ActiveRecord::Base
   end
 
   def destroy_permitted?
+    acting_user.administrator?
+  end
+  
+  def duplicate_permitted?
     acting_user.administrator?
   end
 

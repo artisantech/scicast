@@ -4,4 +4,9 @@ class Admin::CategoriesController < Admin::AdminSiteController
 
   auto_actions :all, :except => [:new, :edit, :show]
   
+  web_method :duplicate do
+    this.duplicate
+    redirect_to Category
+  end
+  
 end

@@ -6,6 +6,7 @@
         <editor:tag blank-message="Select a tag"/>
       </append-header:>
       <body:>
+        <remote-method-button method="duplicate"/>
         <div class="judges">
           <if test="&this.judges">
             Judges:
