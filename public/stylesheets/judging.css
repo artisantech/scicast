@@ -1,3 +1,7 @@
+body { width: auto; margin: 0 10px;}
+
+.aside { width: 30%; }
+
 .login-page, .forgot-password-page { margin-top: 40px; width: 510px; }
 
 .account-nav li { color: white; }

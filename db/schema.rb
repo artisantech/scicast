@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100511170556) do
+ActiveRecord::Schema.define(:version => 20100512115501) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(:version => 20100511170556) do
   end
 
   add_index "categories", ["tag_id"], :name => "index_categories_on_tag_id"
+
+  create_table "category_comments", :force => true do |t|
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+    t.integer  "author_id"
+  end
+
+  add_index "category_comments", ["author_id"], :name => "index_category_comments_on_author_id"
+  add_index "category_comments", ["category_id"], :name => "index_category_comments_on_category_id"
 
   create_table "comments", :force => true do |t|
     t.text     "body"

@@ -1,26 +1,48 @@
 <show-page without-field-list>
-  
-  <prepend-content-header:>
-    <a with="&Category">&laquo; Back to Categories</a>
-  </prepend-content-header:>
 
-  <append-content-body:>
-    <collection:films>
-    
-      <card:>
-        <before-heading:>
-          <movie-thumbnail size="large"/>
-        </before-heading:>
-        <body:>
-          <div class="team-info">
-            <view:team-info/>
-          </div>
-          <div class="player-placeholder"></div>
-        </body:>
-      </card:>    
-      <empty-message:>There are currently no films in this category</empty-message:>
-    </collection>
-  </append-content-body:>
+  <content: replace>
+    <section-group>
+      <section class="content">
+        <section class="content-header">
+          <a with="&Category">&laquo; Back to Categories</a>
+          <h2><view:name/></h2>
+        </section>
+        <section class="content-body">
+          <view:admin-note/>
+
+          <collection:films>
+            <card:>
+              <before-heading:>
+                <movie-thumbnail size="large"/>
+              </before-heading:>
+              <body:>
+                <div class="team-info">
+                  <view:team-info/>
+                </div>
+                <div class="player-placeholder"></div>
+              </body:>
+            </card:>    
+            <empty-message:>There are currently no films in this category</empty-message:>
+          </collection>
+        </section>
+      </section>
+      <aside>
+        <h2>Comments</h2>
+        <with:comments>
+          <collection>
+            <card:>
+              <append-body:><view:created-at/></append-body:>
+            </card:>
+          </collection>
+          <h4>Post a comment</h4>
+          <form with="&new_for_current_user">
+            <submit: label="Post Comment"/>
+          </form>
+        </with:comments>
+      </aside> 
+    </section-group>
+  </content:>
+
   
   <append-body:>
     <video-player/>

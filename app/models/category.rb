@@ -13,6 +13,8 @@ class Category < ActiveRecord::Base
   
   belongs_to :tag
   
+  has_many :comments, :class_name => "CategoryComment"
+  
   def films
     Film.find_tagged_with(tag).tap { |films| films.origin = self; films.origin_attribute = :films }
   end
@@ -22,6 +24,10 @@ class Category < ActiveRecord::Base
     judges.each { |j| dup.judges << j }
     dup.save!
     dup
+  end
+  
+  def latest_comment
+    comments.recent(1).first
   end
 
   # --- Permissions --- #

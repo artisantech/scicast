@@ -3,7 +3,14 @@
   
   <collection:>
     <card:>
-      <append-header:><count:films label="film"/></append-header:>
+      <append-header:>
+        <count:films label="film"/>, <count:comments/>
+        <if:latest_comment>
+          <div class="latest-comment">
+            Latest comment: <view:author/>, <view:created_at/>
+          </div>
+        </if>
+      </append-header:>
     </card:>
 
     <empty-message:>The site administrator has not yet assigned you to any judging categories</empty-message:>

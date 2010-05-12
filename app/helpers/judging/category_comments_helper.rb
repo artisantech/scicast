@@ -1,0 +1,2 @@
+module Judging::CategoryCommentsHelper
+end
