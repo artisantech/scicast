@@ -1,7 +1,7 @@
 <index-page without-count>
   <collection:>
     <card:>
-      <heading:><editor:name/></heading:>
+      <heading:><a subsite="judging"/></heading:>
       <append-header:>
         <editor:tag blank-message="Select a tag"/>
       </append-header:>
