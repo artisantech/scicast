@@ -1,3 +1,5 @@
+.login-page, .forgot-password-page { margin-top: 40px; width: 510px; }
+
 .account-nav li { color: white; }
 
 .input-help { display: none; }
@@ -5,3 +7,16 @@
 .card.category h4 { float: left; width: 200px; }
 
 .thumbnail { float: left; margin: 0 10px 10px 0; }
+
+.movie-icon.enabled { cursor: pointer;}
+.movie-icon.disabled { opacity: 0.3;}
+.movie-icon { position: relative; }
+.movie-icon.large img.thumbnail { height: 100px; width: 100px; }
+img.play-icon { position: absolute; }
+img.play-icon.large { top:31px; left:31px;}
+img.play-icon.small { top:8px; left:9px;}
+
+
+button.hider { display: block; margin: 0 auto;}
+
+.video-player { margin: 20px auto 10px; display: block;}

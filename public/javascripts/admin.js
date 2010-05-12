@@ -32,7 +32,7 @@ Event.addBehavior({
       new Ajax.Request(location.href.replace('/edit', '/untag'), { parameters: { name: tag } })
     },
     
-    'body.film.show-page .thumbnail.enabled:click' : function() {
+    'body.film.show-page .movie-icon.enabled:click' : function() {
       if ($('player-placeholder').innerHTML == "") {
         $('player-placeholder').innerHTML = $('player').innerHTML
       } else {
@@ -40,7 +40,7 @@ Event.addBehavior({
       }
     },
 
-    'body.film.index-page .thumbnail.enabled:click' : function() {
+    'body.film.index-page .movie-icon.enabled:click' : function() {
       player = $('player').innerHTML.replace(/\[MOVIE-SRC\]/g, this.getAttribute('movie-url'))
       $('player-placeholder').innerHTML = player + "<button class='hider' onclick='this.parentNode.innerHTML=\"\"'>Hide</button>"
     }

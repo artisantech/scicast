@@ -1,4 +1,9 @@
 <show-page without-field-list>
+  
+  <prepend-content-header:>
+    <a with="&Category">&laquo; Back to Categories</a>
+  </prepend-content-header:>
+
   <append-content-body:>
     <collection:films>
     
@@ -6,8 +11,19 @@
         <before-heading:>
           <movie-thumbnail size="large"/>
         </before-heading:>
+        <body:>
+          <div class="team-info">
+            <view:team-info/>
+          </div>
+          <div class="player-placeholder"></div>
+        </body:>
       </card:>    
       <empty-message:>There are currently no films in this category</empty-message:>
     </collection>
   </append-content-body:>
+  
+  <append-body:>
+    <video-player/>
+  </append-body:>
+  
 </show-page>

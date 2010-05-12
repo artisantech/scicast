@@ -18,7 +18,7 @@
     <table-plus fields="this, music_status, video_status, stills_status, safety_status, paperwork_status, published"
                 field-tag="editor" without-delete-button>
       <this-view:>
-        <movie-thumbnail size="small" movie-url="#{base_url}#{this.web_movie_url}"/>
+        <movie-thumbnail size="small"/>
         <a/> (<view:reference-code/>)
         <div class="info">
           Team: <view:team_name/>

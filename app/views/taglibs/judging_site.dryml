@@ -21,6 +21,9 @@
     <append-stylesheets:>
       <stylesheet name="judging"/>
     </append-stylesheets:>
+    <append-scripts:>
+      <javascript name="judging"/>
+    </append-scripts:>
   </old-page>
 </extend>
 

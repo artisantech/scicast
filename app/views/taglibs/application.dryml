@@ -3,6 +3,31 @@
 <include src="paperclip" plugin="paperclip_with_hobo"/>
 
 <def tag="movie-thumbnail" attrs="size">
-  <img merge-attrs class='& "thumbnail " + (this.processed_movie.file?? "enabled" : "disabled")' src="#{base_url + this.thumbnail.url(size.to_sym)}"/>
+  <div merge-attrs class="movie-icon #{this.processed_movie.file?? 'enabled' : 'disabled'} #{size}" movie-url="#{base_url}#{this.web_movie_url}" >
+    <img class="thumbnail" src="#{base_url + this.thumbnail.url(size.to_sym)}"/>
+    <image class="play-icon #{size}" src="play-icon-#{size}.png" if="processed_movie.file?"/>
+  </div>
+</def>
+
+<def tag="video-player" attrs="id, width, height, src">
+  <% id ||= "player"; src ||= "[MOVIE-SRC]"; height ||= "384"; width ||= "480" -%>
+  <script merge-attrs id="#{id}" type="text/html">
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="#{width}" height="#{height}" class="video-player">
+    	<param name="movie" value="#{base_url}/player.swf" />
+    	<param name="autostart" value="true" />
+    	<param name="allowfullscreen" value="true" />
+    	<param name="allowscriptaccess" value="always" />
+    	<param name="flashvars" value="file=#{src}&autostart=true" />
+    	<embed
+    		type="application/x-shockwave-flash"
+    		src="#{base_url}/player.swf"
+    		width="#{width}" 
+    		height="#{height}"
+    		allowscriptaccess="always" 
+    		allowfullscreen="true"
+    		flashvars="file=#{src}&autostart=true" 
+    	/>
+    </object>
+  </script>
 </def>
 

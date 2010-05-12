@@ -35,12 +35,23 @@ body.show-page.film .content-header { overflow: hidden;}
 body.show-page.film h3.add-form-heading { margin-bottom: 5px;}
 body.show-page.film .note { background: #FFF9A5; padding: 3px;}
 
-.thumbnail.enabled { cursor: pointer;}
-.thumbnail.disabled { opacity: 0.5;}
-
 button.hider { display: block; margin: 0 auto;}
 
 .card.category h4 { float: left; width: 200px;}
+
+.category.index-page .new-form-heading { margin-top: 50px; }
+
+.duplicate-button { float: right; }
+
+.movie-icon.enabled { cursor: pointer;}
+.movie-icon.disabled { opacity: 0.5;}
+.movie-icon { position: relative; }
+img.play-icon { position: absolute; }
+img.play-icon.large { top:33px; left:33px;}
+img.play-icon.small { top:8px; left:9px;}
+
+.film.index-page .contentj { overflow: hidden; }
+.film.index-page td { white-space: nowrap; overflow: hidden; }
 
 /* --- Organiser --- */
 
