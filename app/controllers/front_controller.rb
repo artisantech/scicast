@@ -3,7 +3,7 @@ class FrontController < ApplicationController
   hobo_controller
 
   def index
-    redirect_to user_signup_url
+    redirect_to home_page
   end
 
   def search

@@ -9,7 +9,9 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   def home_page
-    if current_user.administrator?
+    if current_user.guest?
+      user_signup_url
+    elsif current_user.administrator?
       admin_films_path
     elsif current_user.judge?
       judging_categories_path
