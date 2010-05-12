@@ -18,6 +18,12 @@
 
 <extend tag="page">
   <old-page merge without-app-stylesheet without-live-search>
+    <account-nav: without-sign-up>
+      <before-log-out:>
+        <li if="&current_user.administrator?"><a href="#{admin_films_url}">Admin</a></li>
+      </before-log-out:>
+    </account-nav:>
+  
     <append-stylesheets:>
       <stylesheet name="judging"/>
     </append-stylesheets:>
