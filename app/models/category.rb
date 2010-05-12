@@ -4,6 +4,7 @@ class Category < ActiveRecord::Base
 
   fields do
     name :string
+    admin_note :text, :primary_content => true
     timestamps
   end
   

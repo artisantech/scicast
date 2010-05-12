@@ -9,13 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100510083443) do
+ActiveRecord::Schema.define(:version => 20100511170556) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tag_id"
+    t.text     "admin_note"
   end
 
   add_index "categories", ["tag_id"], :name => "index_categories_on_tag_id"
