@@ -27,3 +27,5 @@ button.hider { display: block; margin: 0 auto;}
 
 #judging-welcome { width: 500px; margin: 0 auto; border-top: 1px dotted #aaa; border-bottom: 1px dotted #aaa;}
 #judging-welcome p { margin: 10px 0; }
+
+.view.category-admin-note p { margin-bottom: 5px; }
