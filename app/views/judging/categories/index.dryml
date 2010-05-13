@@ -1,6 +1,18 @@
 <index-page without-count>
   <heading:>Your Categories</heading:>
   
+  <prepend-content-header:>
+    <div id="judging-welcome">
+      <p>Welcome to the SciCast judging site. It's very simple: we show you a bunch of films in a range of categories, and you email us your marks for them.</p>
+
+      <p>Below, you'll see the list of categories we're asking you to judge. We're still working through the submitted films, so we'll add more categories soon. Click the category title to see the films in that list, and further instructions.</p>
+
+      <p>Each film should be no longer than two and a half minutes, and one of SciCast's rules is they should be 'not boring' - so we hope judging them won't be too onerous a task.</p>
+
+      <p>If you have problems with the site or questions about judging, please email theteam@planet-scicast.org.uk.</p>
+    </div>
+  </prepend-content-header:>
+  
   <collection:>
     <card:>
       <append-header:>
