@@ -2,7 +2,7 @@ body { width: auto; margin: 0 10px;}
 
 .aside { width: 30%; }
 
-.login-page, .forgot-password-page { margin-top: 40px; width: 510px; }
+body.login-page, body.forgot-password-page, body.reset-password-page { margin: 40px auto 0; width: 510px; }
 
 .account-nav li { color: white; }
 
@@ -24,3 +24,6 @@ img.play-icon.small { top:8px; left:9px;}
 button.hider { display: block; margin: 0 auto;}
 
 .video-player { margin: 20px auto 10px; display: block;}
+
+#judging-welcome { width: 500px; margin: 0 auto; border-top: 1px dotted #aaa; border-bottom: 1px dotted #aaa;}
+#judging-welcome p { margin: 10px 0; }

@@ -1,0 +1,20 @@
+<login-page>
+  <prepend-content-header:>
+    <h2>First time here?</h2>
+    <p>Enter your email address and we send you instructions for choosing a password.</p>
+    
+    <form action="#{base_url}/judging/forgot_password">
+      <labelled-item-list>
+        <labelled-item>
+          <item-label>Email Address</item-label>
+          <item-value>
+            <input type="text" name="email_address" id="email-address" class="email-address"/>
+          </item-value>
+        </labelled-item>
+      </labelled-item-list>
+      <div class="actions">
+        <submit label="Send Instructions"/>
+      </div>
+    </form>
+  </prepend-content-header:> 
+</login-page>

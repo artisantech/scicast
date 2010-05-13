@@ -1,11 +1,11 @@
 class UserMailer < ActionMailer::Base
   
   def forgot_password(user, key)
-    prepare_message user.email, "forgot_password password", :user => user, :key => key
+    prepare_message user.email, "Request new password", :user => user, :key => key
   end
   
   def activation(user, key)
-    prepare_message user.email, "activate your account", :user => user, :key => key
+    prepare_message user.email, "Activate your account", :user => user, :key => key
   end
   
   private 
