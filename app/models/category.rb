@@ -1,4 +1,4 @@
-require 'BlueCloth'
+require 'bluecloth'
 
 class Category < ActiveRecord::Base
 
