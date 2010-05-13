@@ -1,10 +1,12 @@
+require 'BlueCloth'
+
 class Category < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
   fields do
     name :string
-    admin_note :text, :primary_content => true
+    admin_note :markdown, :primary_content => true
     timestamps
   end
   
