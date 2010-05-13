@@ -33,3 +33,16 @@
   </old-page>
 </extend>
 
+<extend tag="forgot-password-email-sent-page">
+  <old-forgot-password-email-sent-page merge>
+    <content-body:>
+      <p>
+        If the e-mail address you entered, <%= h params[:email_address] %>,
+        is in our records, you will
+        receive an e-mail from us with instructions for resetting your
+        password. If you don't receive this e-mail, please check your
+        junk mail folder.
+      </p>
+    </content-body:>
+  </old-forgot-password-email-sent-page>
+</extend>
