@@ -1,7 +1,7 @@
 <login-page>
   <prepend-content-header:>
     <h2>First time here?</h2>
-    <p>Enter your email address and we send you instructions for choosing a password.</p>
+    <p>Enter your email address and we will send you instructions for choosing a password.</p>
     
     <form action="#{base_url}/judging/forgot_password">
       <labelled-item-list>
