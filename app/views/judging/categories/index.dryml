@@ -16,7 +16,7 @@
   <collection:>
     <card:>
       <append-header:>
-        <count:films label="film"/>, <count:comments/>
+        <count:films label="film"/>, <count:comments/>.
         <if:latest_comment>
           <div class="latest-comment">
             Latest comment: <view:author/>, <view:created_at/>

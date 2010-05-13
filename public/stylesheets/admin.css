@@ -37,7 +37,7 @@ body.show-page.film .note { background: #FFF9A5; padding: 3px;}
 
 button.hider { display: block; margin: 0 auto;}
 
-.card.category h4 { float: left; width: 200px;}
+.card.category {}
 
 .category.index-page .new-form-heading { margin-top: 50px; }
 

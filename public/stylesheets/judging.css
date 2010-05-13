@@ -8,7 +8,7 @@ body.login-page, body.forgot-password-page, body.reset-password-page { margin: 4
 
 .input-help { display: none; }
 
-.card.category h4 { float: left; width: 200px; }
+.card.category .latest-comment { display: inline; font-style: italic;}
 
 .thumbnail { float: left; margin: 0 10px 10px 0; }
 
