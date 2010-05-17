@@ -13,7 +13,7 @@
           <collection:films>
             <card:>
               <before-heading:>
-                <movie-thumbnail size="large"/>
+                <movie-thumbnail size="large" onclick="playMovie(this)"/>
               </before-heading:>
               <body:>
                 <div class="team-info">
