@@ -1,3 +1,7 @@
+document.observe("dom:loaded", function() {
+  $$('body.category.show-page .movie-icon.enabled').each(function(el) {});
+});
+
 Event.addBehavior({
     
     'body.category.show-page .movie-icon.enabled:click' : function() {
