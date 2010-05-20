@@ -21,7 +21,7 @@ img.play-icon.large { top:31px; left:31px;}
 img.play-icon.small { top:8px; left:9px;}
 
 
-button.hider { display: block; margin: 0 auto;}
+.film-actions { text-align: center;}
 
 .video-player { margin: 20px auto 10px; display: block; clear: both;}
 
