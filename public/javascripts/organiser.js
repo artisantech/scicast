@@ -14,7 +14,7 @@ function activeTag() {
 }
 
 function getFilms() {
-  url = homeUrl + (filterTags.length == 0 ? '' : '?tags=' + filterTags.join(','))
+  url = homeUrl + (filterTags.length == 0 ? '' : '?tags=' + escape(filterTags.join(',')))
   $.getJSON(url, function(data) {
     films = data
     sortIntoColumns()
