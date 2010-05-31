@@ -1,8 +1,14 @@
 # SciCast Competition Management System
 
-This is a Ruby on Rails + [Hobo][1] web application for managing the [SciCast](http://www.planet-scicast.com) competition.
+This is a Ruby on Rails + [Hobo][1] web application for managing the [SciCast][2] competition. The app features:
 
-The app was built by [Artisan Technology][2] and [StoryCog][3], funded by [NESTA][4].
+  - A contributor site, where competition entrants can sign up and complete the submission of one or more entries, including upload of movie files.
+  
+  - An administration and editorial site, where competition administrators can manage most aspects of the editorial workflow, including tracking various tasks that have to be performed on each entry (for example, checking for use of copyright material). There is also a powerful and flexible tag based organiser, which can be used for a range of purposes, including assigning entries to various competition categories. A commenting system allows administrators to discuss the entry with the contributor.
+  
+  - A judging site, where competition judges can log in, access the films in their category and leave comments on them.
+
+The app was built by [Artisan Technology][3] and [StoryCog][4], funded by [NESTA][5].
 
 NESTA have generously asked that the software be contributed to the open-source community. The software is valuable on two counts:
 
@@ -11,9 +17,10 @@ NESTA have generously asked that the software be contributed to the open-source 
  - As a complete example of a web app built using the Hobo extensions to Ruby on Rails, and as such a valuable resource to learners of Hobo.
  
 [1]: http://hobocentral.net
-[2]: http://artisantech.co.uk
-[3]: http://storycog.com/
-[4]: http://www.nesta.org.uk
+[2]: http://www.planet-scicast.com
+[3]: http://artisantech.co.uk
+[4]: http://storycog.com/
+[5]: http://www.nesta.org.uk
 
 # License
 
