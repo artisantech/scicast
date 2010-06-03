@@ -16,9 +16,12 @@ class FilmsController < ApplicationController
   end
   
   show_action :print_and_post
+  
+  # These are the 'printable pages' - they have print stylesheets and are intended to be printed out.
   show_action :license
   show_action :performer_consent
   
+  # This action recieves the POST from the swf-upload file uploader.
   web_method :upload do
     @this.movie = params[:Filedata]
     @this.save(false)

@@ -12,7 +12,6 @@ class Film < ActiveRecord::Base
     team_name :string
     team_info :text
 
-    editorial_notes :text
     unique_id :string
     
     duration :string
@@ -20,6 +19,8 @@ class Film < ActiveRecord::Base
     reference_code :string
     
     license License
+
+    editorial_notes :text
     
     music_status     Status
     video_status     Status
@@ -60,10 +61,10 @@ class Film < ActiveRecord::Base
   named_scope :not_published, :conditions => "published is null or not published"
   
   
-  
+  # This demonstrates how to configure different paperclip options according to the environment.
+  # For example, we were originally using Heroku for staging, which required us to use S3 for file storage.
   def self.paperclip_options
     if Rails.env.staging?
-      # We're staging on heroku, so use S3
       { :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => ":attachment/:id/:style.:extension" }
     else
       {}

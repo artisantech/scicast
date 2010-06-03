@@ -1,11 +1,7 @@
-ADMIN_EMAIL_ADDRESS = if Rails.env.production?
-                        "jonathan@storycog.com"
-                      else
-                        "tom@tomlocke.com"
-                      end
+ADMIN_EMAIL_ADDRESS = "administrator@your-domain-here.com"
 
-APP_DOMAIN        = "www.planet-scicast.org"
+APP_DOMAIN        = "www.your-domain-here.com"
 
-APP_REPLY_ADDRESS = "no-reply@#{APP_DOMAIN}"
+APP_REPLY_ADDRESS = "no-reply@your-domain-here.com"
 
-COMMENT_REPLY_ADDRESS = "theteam@planet-scicast.org.uk"
+COMMENT_REPLY_ADDRESS = "theteam@your-domain-here.com"

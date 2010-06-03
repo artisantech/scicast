@@ -60,6 +60,16 @@
   <input for-type="HoboFields::EnumString" merge labels="&{:cc_by => 'BY', :cc_by_nc_sa => 'BY NC SA'}"/>
 </def>
 
+<def tag="upload-user-movie">
+  <%= swfupload :controller => 'films', :action => 'upload', :id => this.id %>
+</def>
+
+<extend tag="card" for="Comment">
+  <old-card>
+    <after-creator-link:>, <view:created-at/></after-creator-link:>
+  </old-card>
+</extend>
+
 
 <!-- Print and post tags -->
 
@@ -82,12 +92,3 @@
   <span class="tickbox">&#10063;</span>
 </def>
 
-<def tag="upload-user-movie">
-  <%= swfupload :controller => 'films', :action => 'upload', :id => this.id %>
-</def>
-
-<extend tag="card" for="Comment">
-  <old-card>
-    <after-creator-link:>, <view:created-at/></after-creator-link:>
-  </old-card>
-</extend>
