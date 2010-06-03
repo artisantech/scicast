@@ -6,7 +6,7 @@ Please see the main readme file (README.markdown) for more information about thi
 
 # Model Layer
 
-![Model Diagram](model.png)
+![Model Diagram](http://github.com/artisan/scicast/tree/master/doc/model.png?raw=true)
 
 As this app centres around users submitting films to the competition, the central models are `User` and `Film`.
 
