@@ -1,3 +1,5 @@
+gem 'will_paginate', '2.3.11'
+
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
@@ -8,6 +10,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.gem 'hobo', :version => "1.0.0"
+  config.gem 'will_paginate', :version => '2.3.11'
   config.gem 'geokit'
 
   # Settings in config/environments/* take precedence over those specified here.
