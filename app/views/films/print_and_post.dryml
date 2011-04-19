@@ -30,8 +30,6 @@
       NE30 4JX
     </address>
     
-    <p class="warn">From the Republic of Ireland you'll still need to use stamps, sorry!</p>
-
     <if test="&!this.agreements_posted">
       <h3>Please let us know when you have posted the forms, by checking this box. If you don't check the box now, you will be able to return to this page later.</h3>
       <form>
