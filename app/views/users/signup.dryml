@@ -3,8 +3,11 @@
   <content-header:>
     <% unless @user.errors.any? -%>
       <div class="note">
-        The submission deadline for 2010 has passed, but we're <b>still accepting films</b> while we work through the backlog. Sign up and
-        start the process as soon as you can, and make sure your paperwork is in the post this week, please (by April 23rd).
+        The submission deadline for SciCast 2011 is 27th April, but we'll continue to accept films for as long as we can after that.
+        Submit your film as soon as you can; start the process by clicking one of the links below.
+        
+        Once you've uploaded or posted our film, you'll need to print some paperwork, fill it in, and post it to us. It's easy,
+        promise!
       </div>
     
     
